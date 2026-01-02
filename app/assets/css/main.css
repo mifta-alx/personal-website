@@ -1,0 +1,60 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-apple: "SF Pro Display", "-apple-system", "BlinkMacSystemFont", "Helvetica Neue", "Segoe UI", "Roboto", "Arial", sans-serif;
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a1a1a1;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
+  --color-neutral-950: #0a0a0a;
+  --color-gray-light-1: rgb(242, 242, 247);
+  --color-gray-light-2: rgb(229, 229, 234);
+  --color-gray-light-3: rgb(209, 209, 214);
+  --color-gray-light-4: rgb(199, 199, 204);
+  --color-gray-light-5: rgb(174, 174, 178);
+  --color-gray-light-6: rgb(142, 142, 147);
+  --color-gray-light-contrast-1: rgb(235, 235, 240);
+  --color-gray-light-contrast-2: rgb(216, 216, 220);
+  --color-gray-light-contrast-3: rgb(188, 188, 192);
+  --color-gray-light-contrast-4: rgb(174, 174, 178);
+  --color-gray-light-contrast-5: rgb(142, 142, 147);
+  --color-gray-light-contrast-6: rgb(108, 108, 112);
+  --color-gray-dark-1: rgb(142, 142, 147);
+  --color-gray-dark-2: rgb(99, 99, 102);
+  --color-gray-dark-3: rgb(72, 72, 74);
+  --color-gray-dark-4: rgb(58, 58, 60);
+  --color-gray-dark-5: rgb(44, 44, 46);
+  --color-gray-dark-6: rgb(28, 28, 30);
+  --color-gray-dark-contrast-1: rgb(174, 174, 178);
+  --color-gray-dark-contrast-2: rgb(124, 124, 128);
+  --color-gray-dark-contrast-3: rgb(84, 84, 86);
+  --color-gray-dark-contrast-4: rgb(68, 68, 70);
+  --color-gray-dark-contrast-5: rgb(54, 54, 56);
+  --color-gray-dark-contrast-6: rgb(36, 36, 38);
+}
+
+@layer base {
+  html, body {
+    @apply bg-gray-light-1 text-gray-dark-6;
+    font-family: var(--font-apple);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+    /* Tambahkan rendering teks khas Apple agar lebih tajam */
+    text-rendering: optimizeLegibility;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  @variant dark {
+    html, body {
+      @apply bg-gray-dark-6 text-gray-light-1;
+    }
+  }
+}
