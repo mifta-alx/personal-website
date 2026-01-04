@@ -6,7 +6,10 @@ export default defineNuxtConfig({
   css: ['./app/assets/css/main.css'],
   icon: {
     mode: 'css',
-    cssLayer: 'base'
+    cssLayer: 'base',
+    serverBundle: {
+      collections: ['solar']
+    }
   },
   typescript: {
     includeWorkspace: true
@@ -21,5 +24,9 @@ export default defineNuxtConfig({
     preference: 'system',
     fallback: 'light',
   },
-  modules: ['@nuxt/icon', '@nuxtjs/color-mode'],
+  modules: [
+    '@nuxt/icon',
+    '@nuxtjs/color-mode',
+    '@nuxt/image',
+  ],
 })

@@ -15,11 +15,11 @@ const props = defineProps({
 <template>
   <NuxtLink
     :to="href"
-    class="group flex w-fit lg:w-full lg:h-10 items-center gap-2.5 shrink-0 overflow-hidden hover:scale-[1.04] rounded-full lg:rounded-lg p-1.5 lg:px-3 text-left text-sm text-nowrap transition-all duration-300 ease-in-out hover:bg-gray-light-contrast-2 text-gray-dark-2 hover:text-gray-dark-6 dark:hover:bg-gray-dark-5 dark:text-gray-light-6 dark:hover:text-gray-light-1"
-    active-class="bg-gray-light-contrast-2 text-gray-dark-6 dark:bg-gray-dark-5 dark:!text-gray-light-1 !scale-100"
+    class="group flex w-fit md:w-full md:h-10 items-center gap-2.5 shrink-0 overflow-hidden hover:scale-[1.04] rounded-full md:rounded-lg p-1.5 md:px-3 text-left text-sm text-nowrap transition-all duration-300 ease-in-out hover:bg-light-contrast-2 text-dark-2 hover:text-dark-6 dark:hover:bg-dark-5 dark:text-light-6 dark:hover:text-light-1"
+    active-class="bg-light-contrast-2 text-dark-6 dark:bg-dark-5 dark:!text-light-1 !scale-100"
   >
-    <Icon :name="icon" class="size-5 lg:size-4" />
-    <div class="hidden lg:inline-block">
+    <Icon :name="icon" class="size-5 md:size-4" />
+    <div class="hidden md:inline-block">
       <slot />
     </div>
   </NuxtLink>

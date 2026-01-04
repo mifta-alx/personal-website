@@ -2,17 +2,7 @@
 import { ref } from "vue";
 
 const email = "alx.yoi67@gmail.com";
-const whatsappNumber = "628123456789";
 const copyText = ref("Copy Email");
-
-const handleHireMe = () => {
-  const message =
-    "Halo Miftakhussurur, saya tertarik untuk bekerja sama dengan Anda.";
-  window.open(
-    `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`,
-    "_blank"
-  );
-};
 
 const handleCopyEmail = async () => {
   try {
@@ -29,41 +19,52 @@ const handleCopyEmail = async () => {
 </script>
 
 <template>
-  <div class="hidden lg:flex flex-col p-2 items-center justify-center gap-2">
-    <p class="text-white text-center font-medium text-md">
+  <div
+    class="hidden md:flex flex-col px-2 pt-8 items-center justify-center gap-2"
+  >
+    <div
+      class="relative"
+    >
+      <NuxtImg
+        src="/images/icon1.webp"
+        alt="Foto Profil"
+        class="absolute -top-3.5 bottom-0 -right-0.5 z-10 scale-[1.22]"
+      />
+      <div class="rounded-full bg-dark-1 dark:bg-light-contrast-2 size-20 relative outline-[6px] outline-light-3 dark:outline-dark-4 duration-300 ease-in-out transition-all"/>
+    </div>
+    <p class="text-dark-contrast-6 dark:text-light-1 text-center font-medium text-base mt-2">
       Miftakhussurur Al Maliki
     </p>
     <div class="flex flex-col gap-2 justify-between items-center">
       <div class="capitalize flex flex-row items-center gap-2 shrink-0">
-        <div class="rounded-full size-1.5 bg-gray-dark-4 dark:bg-gray-dark-2" />
+        <div class="rounded-full size-1.5 bg-dark-1 dark:bg-dark-2" />
         <p
-          class="text-sm text-gray-dark-2 dark:text-gray-dark-contrast-1 font-medium"
+          class="text-sm text-dark-4 dark:text-dark-contrast-1 font-medium"
         >
           Frontend Developer
         </p>
       </div>
       <div
-        class="uppercase flex flex-row items-center gap-1 bg-green-100 dark:bg-green-900 rounded-full px-2 py-0.5 shrink-0"
+        class="uppercase flex flex-row items-center gap-1 bg-green-200/50 dark:bg-green-900/40 rounded-full px-2 py-0.5 shrink-0"
       >
-        <div class="rounded-full size-1.5 bg-green-600 dark:bg-green-500" />
+        <div class="rounded-full size-1.5 bg-green-700 dark:bg-green-500" />
         <p
-          class="text-[10px] text-green-600 dark:text-green-500 font-medium tracking-wide"
+          class="text-[10px] text-green-700 dark:text-green-500 font-medium tracking-wide"
         >
           available for work
         </p>
       </div>
     </div>
     <div class="flex flex-row gap-2 w-full mt-4">
-      <button
-        @click="handleHireMe"
-        class="flex gap-1 cursor-pointer items-center justify-center w-full bg-gray-light-contrast-2 hover:bg-gray-light-contrast-3 dark:bg-gray-dark-contrast-4 dark:hover:bg-gray-dark-contrast-5 transition-all duration-300 ease-in-out text-gray-dark-6 dark:text-gray-light-1 rounded-md h-8 text-xs font-medium"
+      <NuxtLink to="/hire-me"
+        class="flex gap-1 cursor-pointer items-center justify-center w-full bg-dark-6 hover:bg-dark-contrast-5 dark:bg-dark-contrast-4 dark:hover:bg-dark-contrast-5 transition-all duration-300 ease-in-out text-light-1 rounded-md h-8 text-xs font-semibold"
       >
-        <Icon name="solar:add-circle-line-duotone" class="size-4" />
+        <Icon name="solar:add-circle-line-duotone" size="14" />
         Hire Me
-      </button>
+      </NuxtLink>
       <button
         @click="handleCopyEmail"
-        class="flex gap-1 cursor-pointer items-center justify-center w-full bg-gray-dark-contrast-6 hover:bg-gray-dark-contrast-4 border border-gray-dark-contrast-4 transition-all duration-300 ease-in-out text-white rounded-md h-8 text-xs font-medium"
+        class="flex gap-1 cursor-pointer items-center justify-center w-full bg-light-contrast-1 hover:bg-light-4 dark:bg-dark-contrast-6 dark:hover:bg-dark-contrast-4 outline outline-light-4 dark:outline-dark-contrast-4 transition-all duration-300 ease-in-out text-dark-6 dark:text-light-1 rounded-md h-8 text-xs font-semibold"
       >
         <Icon
           :name="
