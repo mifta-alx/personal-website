@@ -28,5 +28,6 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxtjs/color-mode',
     '@nuxt/image',
+    '@vueuse/motion/nuxt'
   ],
 })
