@@ -32,12 +32,21 @@
 }
 
 @layer base {
+  html {
+    background-color: var(--color-light-1);
+  }
+
+  html.dark {
+    background-color: var(--color-dark-6);
+  }
+
   html, body {
     @apply bg-light-1 text-dark-6;
     font-family: var(--font-apple);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    
+
+    min-height: 100%;    
     /* Tambahkan rendering teks khas Apple agar lebih tajam */
     text-rendering: optimizeLegibility;
     transition: background-color 0.3s ease, color 0.3s ease;

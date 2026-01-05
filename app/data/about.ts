@@ -1,3 +1,4 @@
+import type { InvolvementExperience } from "~/types/involvement-experience"
 import type { WorkExperience } from "~/types/work-experience"
 
 const educationDetails = {
@@ -65,4 +66,40 @@ const workExperiences: WorkExperience[] = [
         ]
     },
 ]
-export { educationDetails, workExperiences }
+const involvementExperiences: InvolvementExperience[] = [
+    {
+        organizationLogo: '/images/lab-logo.webp',
+        organizationName: 'Mobile Programming Laboratory',
+        role: 'Mobile Programming Practicum Coordinator',
+        period: 'Jan 2023 - Jan 2024',
+        location: 'Malang, East Java, Indonesia',
+        responsibilities: [
+            'Conducted research and developed practical module content, structured with a focus on the latest developments in the field and presented to more than 100 students, in alignment with industry needs.',
+            "Managing students'task grades and progress throughout the 10 learning modules of the internship, meticulously handling attendance to ensure students' presence in each practical session.",
+        ]
+    },
+    {
+        organizationLogo: '/images/lab-logo.webp',
+        organizationName: 'Mobile Programming Laboratory',
+        role: 'Laboratory Instructor',
+        period: 'Sep 2021 - Sep 2025',
+        location: 'Malang, East Java, Indonesia',
+        responsibilities: [
+            'Assist and teach mobile programming, embedded systems, and visual programming to more than 20 students/classes during practicum sessions.',
+        ]
+    },
+    {
+        organizationLogo: '/images/hati-logo.webp',
+        organizationName: 'Himpunan Mahasiswa Teknik Informatika',
+        role: 'Informatics Festival Committee',
+        period: 'Jun 2023',
+        location: 'Malang, East Java, Indonesia',
+        responsibilities: [
+            'Responsible for documenting the entire activities during the grand night of the Informatics Festival.',
+            'Collaborated with the committee team to ensure the visual documentation reflected the atmosphere and diversity of the event.',
+            'Coordinated with fellow photographers to cover all aspects of the event.',
+            'Ensured timely delivery of photo results.',
+        ]
+    },
+]
+export { educationDetails, workExperiences, involvementExperiences }

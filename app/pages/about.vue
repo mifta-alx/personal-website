@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { calculateDuration } from "@/utils/date-format";
-import { educationDetails, workExperiences } from "@/data/about";
+import { educationDetails, involvementExperiences, workExperiences } from "@/data/about";
 
 definePageMeta({
   layout: "landing-page",
@@ -14,11 +14,11 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="flex flex-col gap-6">
+  <div class="flex flex-col gap-8 md:gap-10">
     <div class="flex flex-col gap-4">
       <SectionHeader
         title="Experience"
-        description="Work experience"
+        description="Technical Experience"
         icon="solar:case-linear"
       />
       <div v-if="workExperiences.length > 0" class="flex flex-col gap-4">
@@ -86,7 +86,7 @@ useSeoMeta({
     <div class="flex flex-col gap-4">
       <SectionHeader
         title="Education"
-        description="Education background"
+        description="Academic Journey"
         icon="solar:square-academic-cap-linear"
       />
       <ItemCard
@@ -102,7 +102,7 @@ useSeoMeta({
           <p class="text-sm font-normal text-dark-contrast-3 dark:text-light-5">
             {{ educationDetails?.degree }}
           </p>
-          <div class="flex gap-2 items-center">
+          <div class="flex gap-x-2 items-center flex-wrap">
             <p
               class="text-xs font-normal text-dark-contrast-2 dark:text-dark-1"
             >
@@ -119,6 +119,47 @@ useSeoMeta({
           </div>
         </template>
       </ItemCard>
+    </div>
+    <div class="flex flex-col gap-4">
+      <SectionHeader
+        title="Involvement"
+        description="Organizations & Activities"
+        icon="solar:users-group-two-rounded-linear"
+      />
+      <div v-if="involvementExperiences.length > 0" class="flex flex-col gap-4">
+        <ItemCard
+          v-for="(involve, index) in involvementExperiences"
+          :info="involve?.responsibilities"
+          :image="involve?.organizationLogo"
+          :key="index"
+        >
+          <template #content>
+            <p
+            class="text-base font-medium text-dark-contrast-6 dark:text-light-1"
+          >
+            {{ involve?.organizationName }}
+          </p>
+          <p class="text-sm font-normal text-dark-contrast-3 dark:text-light-5">
+            {{ involve?.role }}
+          </p>
+          <div class="flex gap-x-2 items-center flex-wrap">
+            <p
+              class="text-xs font-normal text-dark-contrast-2 dark:text-dark-1"
+            >
+              {{ involve?.period }}
+            </p>
+            <div
+              class="rounded-full size-1 bg-dark-1 dark:bg-dark-2 shrink-0"
+            />
+            <p
+              class="text-xs font-normal text-dark-contrast-3 dark:text-light-5"
+            >
+              {{ involve?.location }}
+            </p>
+          </div>
+          </template>
+        </ItemCard>
+      </div>
     </div>
   </div>
 </template>
