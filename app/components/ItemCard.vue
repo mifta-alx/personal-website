@@ -86,16 +86,15 @@ const mergedImageClass = computed(() => {
           :class="isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'"
         >
           <div class="overflow-hidden">
-            <div class="h-px w-full bg-dark-6/10 dark:bg-light-1/10 mt-1" />
             <div v-if="info.length > 0">
-              <ul class="space-y-1 mt-2">
+              <ul class="space-y-1 mt-1">
                 <li
                   v-for="(item, index) in info"
                   :key="index"
                   class="text-sm font-normal text-dark-contrast-3 dark:text-light-5 flex gap-2 items-start"
                 >
                   <div
-                    class="rounded-full size-1 bg-dark-1 dark:bg-dark-2 shrink-0 mt-1.5"
+                    class="rounded-full size-1 bg-dark-1 dark:bg-dark-2 shrink-0 mt-2"
                   />
                   {{ item }}
                 </li>

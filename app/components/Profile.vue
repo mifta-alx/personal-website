@@ -22,25 +22,29 @@ const handleCopyEmail = async () => {
   <div
     class="hidden md:flex flex-col px-2 pt-8 items-center justify-center gap-2"
   >
-    <div
-      class="relative"
-    >
-      <NuxtImg
-        src="/images/icon1.webp"
-        alt="Foto Profil"
+    <div class="relative">
+      <SpringAnimation
+        :delay="200"
+        :initial-scale="0.8"
         class="absolute -top-3.5 bottom-0 -right-0.5 z-10 scale-[1.22]"
-      />
-      <div class="rounded-full bg-dark-1 dark:bg-light-contrast-2 size-20 relative outline-[6px] outline-light-3 dark:outline-dark-4 duration-300 ease-in-out transition-all"/>
+      >
+        <NuxtImg src="/images/icon1.webp" alt="Foto Profil" />
+      </SpringAnimation>
+      <SpringAnimation :delay="0">
+        <div
+          class="rounded-full bg-dark-1 dark:bg-light-contrast-2 size-20 relative outline-[6px] outline-light-3 dark:outline-dark-4"
+        />
+      </SpringAnimation>
     </div>
-    <p class="text-dark-contrast-6 dark:text-light-1 text-center font-medium text-base mt-2">
+    <p
+      class="text-dark-contrast-6 dark:text-light-1 text-center font-medium text-base mt-2"
+    >
       Miftakhussurur Al Maliki
     </p>
     <div class="flex flex-col gap-2 justify-between items-center">
       <div class="capitalize flex flex-row items-center gap-2 shrink-0">
         <div class="rounded-full size-1.5 bg-dark-1 dark:bg-dark-2" />
-        <p
-          class="text-sm text-dark-4 dark:text-dark-contrast-1 font-medium"
-        >
+        <p class="text-sm text-dark-4 dark:text-dark-contrast-1 font-medium">
           Frontend Developer
         </p>
       </div>
@@ -56,7 +60,8 @@ const handleCopyEmail = async () => {
       </div>
     </div>
     <div class="flex flex-row gap-2 w-full mt-4">
-      <NuxtLink to="/hire-me"
+      <NuxtLink
+        to="/hire-me"
         class="flex gap-1 cursor-pointer items-center justify-center w-full bg-dark-6 hover:bg-dark-contrast-5 dark:bg-dark-contrast-4 dark:hover:bg-dark-contrast-5 transition-all duration-300 ease-in-out text-light-1 rounded-md h-8 text-xs font-semibold"
       >
         <Icon name="solar:add-circle-line-duotone" size="14" />
