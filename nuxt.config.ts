@@ -4,9 +4,15 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   css: ['./app/assets/css/main.css'],
+  nitro: {
+    preset: 'vercel'
+  }, 
+  experimental: {
+    payloadExtraction: false
+  },
   runtimeConfig: {
     public: {
-      authorId: process.env.AUTHOR_ID, 
+      authorId: process.env.AUTHOR_ID,
     }
   },
   icon: {
@@ -30,12 +36,12 @@ export default defineNuxtConfig({
     fallback: 'light',
   },
   supabase: {
-    redirect: false ,
+    redirect: false,
     cookieOptions: {
-    maxAge: 60 * 60 * 8,
-    sameSite: 'lax',
-    secure: process.env.NODE_ENV === 'production',
-  }
+      maxAge: 60 * 60 * 8,
+      sameSite: 'lax',
+      secure: process.env.NODE_ENV === 'production',
+    }
   },
   modules: [
     '@nuxt/icon',
