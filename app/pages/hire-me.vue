@@ -1,11 +1,14 @@
-<script>
+<script setup lang="ts">
 definePageMeta({
   layout: "landing-page",
 });
 </script>
 
 <template>
-  <div></div>
+  <Content>
+    <StatusHeader title="Hire Me" />
+    <RealtimeChat />
+  </Content>
 </template>
 
 <style></style>
