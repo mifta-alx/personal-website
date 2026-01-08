@@ -1,4 +1,4 @@
-<script lang="ts" setup> 
+<script lang="ts" setup>
 const props = defineProps({
   delay: {
     type: Number,
@@ -8,7 +8,11 @@ const props = defineProps({
     type: Number,
     default: 1000,
   },
-})
+  class: {
+    type: String,
+    default: "",
+  },
+});
 </script>
 
 <template>
@@ -26,7 +30,8 @@ const props = defineProps({
         delay: props.delay,
       },
     }"
+    :class="class"
   >
-    <slot/>
+    <slot />
   </div>
 </template>

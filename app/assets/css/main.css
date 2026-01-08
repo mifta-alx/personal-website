@@ -27,8 +27,8 @@
   --color-dark-contrast-4: rgb(68, 68, 70);
   --color-dark-contrast-5: rgb(54, 54, 56);
   --color-dark-contrast-6: rgb(36, 36, 38);
-  --shadow-light :  0px 0px 5px 0px rgb(209, 209, 214);
-  --shadow-dark :  0px 0px 5px 0px rgb(58, 58, 60);
+  --shadow-light :  0px 0px 3px 0px rgb(209, 209, 214);
+  --shadow-dark :  0px 0px 3px 0px rgb(58, 58, 60);
   --color-red-light: rgb(255, 56, 60);
   --color-red-dark: rgb(255, 66, 69);
   --color-red-contrast-light: rgb(233, 21, 45);
