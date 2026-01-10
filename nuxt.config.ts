@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     payloadExtraction: false
   },
   runtimeConfig: {
+    discordWebhookUrl:process.env.DISCORD_WEBHOOK_URL,
     public: {
       authorId: process.env.AUTHOR_ID,
     }

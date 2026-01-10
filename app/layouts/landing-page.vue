@@ -42,11 +42,11 @@
         <SidebarFooter />
       </Sidebar>
       <div
-        class="w-full md:min-h-[calc(100vh-48px)] rounded-xl bg-light-contrast-1 dark:bg-dark-contrast-6 border border-light-2 dark:border-dark-5"
+        class="flex flex-col justify-between w-full md:min-h-[calc(100vh-48px)] rounded-xl bg-light-contrast-1 dark:bg-dark-contrast-6 border border-light-2 dark:border-dark-5"
       >
         <slot />
+        <Footer />
       </div>
-      <Footer />
     </div>
   </div>
 </template>

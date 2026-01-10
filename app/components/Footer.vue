@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col gap-2 md:hidden">
+  <div class="flex flex-col gap-2 md:hidden px-1.5 pb-1.5">
     <div
-      class="w-full rounded-xl bg-light-contrast-1 dark:bg-dark-contrast-6 p-5 border border-light-2 dark:border-dark-5 flex flex-row justify-between items-center gap-4"
+      class="w-full rounded-xl bg-light-2 dark:bg-dark-5 p-5 border border-light-2 dark:border-dark-5 flex flex-row justify-between items-center gap-4"
     >
       <div class="capitalize flex flex-row items-center gap-2 shrink-0">
         <div class="rounded-full size-1.5 bg-dark-1 dark:bg-dark-2" />
@@ -37,7 +37,7 @@
       </div>
     </div>
     <div
-      class="w-full rounded-xl bg-light-contrast-1 dark:bg-dark-contrast-6 p-8 border border-light-2 dark:border-dark-5 flex flex-row justify-center items-center gap-4"
+      class="w-full rounded-xl bg-light-2 dark:bg-dark-5 p-8 border border-light-2 dark:border-dark-5 flex flex-row justify-center items-center gap-4"
     >
       <p class="text-[11px] text-dark-4 dark:text-dark-1">
         &copy; 2026 Miftakhussurur Al Maliki

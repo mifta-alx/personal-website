@@ -20,8 +20,8 @@ useSeoMeta({
 
 <template>
   <Content>
-    <BlurReveal>
-      <div class="flex flex-col gap-8">
+    <div class="flex flex-col gap-8">
+      <BlurReveal>
         <div class="flex flex-col gap-4">
           <div class="flex flex-col">
             <h1
@@ -46,6 +46,9 @@ useSeoMeta({
           </div>
           <div class="h-px w-full bg-dark-6/10 dark:bg-light-1/10" />
         </div>
+      </BlurReveal>
+
+      <BlurReveal :delay="500" :duration="800" :class="'flex flex-col gap-8'">
         <div class="flex flex-col gap-4">
           <SectionHeader
             title="Experience"
@@ -199,7 +202,7 @@ useSeoMeta({
             </ItemCard>
           </div>
         </div>
-      </div>
-    </BlurReveal>
+      </BlurReveal>
+    </div>
   </Content>
 </template>
