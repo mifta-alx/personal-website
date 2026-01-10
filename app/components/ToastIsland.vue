@@ -46,10 +46,10 @@ watch(
 <template>
   <div
     v-if="isVisible"
-    class="fixed top-8 left-0 right-0 flex justify-center z-99 pointer-events-none"
+    class="fixed top-16 md:top-8 left-0 right-0 flex justify-center z-99 pointer-events-none"
   >
     <div
-      class="flex items-center p-1 overflow-hidden transition-all duration-500 shadow-2xl rounded-full border border-light-1/10 bg-light-1 dark:bg-dark-6 text-dark-6 dark:text-light-1 pointer-events-auto"
+      class="flex items-center p-1 overflow-hidden transition-all duration-500 shadow-2xl rounded-full border border-dark-1/10 dark:border-light-1/10 bg-light-1 dark:bg-dark-6 text-dark-6 dark:text-light-1 pointer-events-auto"
       :class="[
         isAnchored
           ? 'translate-y-0 opacity-100 scale-100'

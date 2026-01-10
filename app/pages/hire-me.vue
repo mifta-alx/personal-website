@@ -53,11 +53,11 @@ const handleSubmit = async () => {
   />
   <Content>
     <StatusHeader title="Hire Me" />
-    <div class="flex flex-col gap-6 pt-6 pb-4 md:p-0">
+    <div class="flex flex-col gap-6 md:gap-10 pt-6 pb-4 md:p-0">
       <BlurReveal>
         <div class="flex flex-col">
           <h1
-            class="text-dark-contrast-6 dark:text-light-1 font-bold tracking-tighter text-2xl"
+            class="text-dark-contrast-6 dark:text-light-1 font-bold tracking-tighter text-3xl"
           >
             Development Inquiry
           </h1>
@@ -69,6 +69,7 @@ const handleSubmit = async () => {
           </p>
         </div>
       </BlurReveal>
+      <BlurReveal :delay="500">
       <form @submit.prevent="handleSubmit" class="grid grid-cols-2 gap-2.5">
         <input
           v-model="formData.name"
@@ -85,7 +86,7 @@ const handleSubmit = async () => {
         <div class="col-span-2">
           <textarea
             v-model="formData.message"
-            rows="10"
+            rows="12"
             placeholder="Message"
             class="w-full h-full bg-light-2 dark:bg-dark-5 rounded-md px-3.5 py-3 focus:outline-none text-sm text-dark-6 dark:text-light-1"
           />
@@ -102,8 +103,7 @@ const handleSubmit = async () => {
           </button>
         </div>
       </form>
+      </BlurReveal>
     </div>
   </Content>
 </template>
-
-<style></style>
