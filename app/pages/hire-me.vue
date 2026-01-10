@@ -14,24 +14,43 @@ const formData = ref({
   email: "",
   message: "",
 });
-
-const { execute, status, error } = await useFetch("/api/hire", {
+const statusMsg = ref("");
+const toastType = ref<"success" | "error">("success");
+const showToast = ref(false);
+const { execute, status } = await useFetch("/api/hire", {
   method: "POST",
   body: formData,
   watch: false,
   immediate: false,
+  onResponse({ response }) {
+    if (response.ok) {
+      statusMsg.value = "Message sent successfully!";
+      toastType.value = "success";
+      showToast.value = true;
+      formData.value = { name: "", email: "", message: "" };
+    }
+  },
+  onResponseError({ response }) {
+    statusMsg.value =
+      response.statusText || response._data?.message || "An error occurred";
+    toastType.value = "error";
+    showToast.value = true;
+  },
 });
 
 const handleSubmit = async () => {
+  if (status.value === "pending") return;
   await execute();
-};
-
-const getFieldError = (fieldName: string) => {
-  return error.value?.data?.data?.errors[fieldName];
 };
 </script>
 
 <template>
+  <ToastIsland
+    :show="showToast"
+    :message="statusMsg"
+    :type="toastType"
+    @close="showToast = false"
+  />
   <Content>
     <StatusHeader title="Hire Me" />
     <div class="flex flex-col gap-6 pt-6 pb-4 md:p-0">
@@ -51,12 +70,12 @@ const getFieldError = (fieldName: string) => {
         </div>
       </BlurReveal>
       <form @submit.prevent="handleSubmit" class="grid grid-cols-2 gap-2.5">
-          <input
-            v-model="formData.name"
-            type="text"
-            placeholder="Name"
-            class="bg-light-2 dark:bg-dark-5 rounded-md px-3.5 py-3 focus:outline-none text-sm text-dark-6 dark:text-light-1"
-          />
+        <input
+          v-model="formData.name"
+          type="text"
+          placeholder="Name"
+          class="bg-light-2 dark:bg-dark-5 rounded-md px-3.5 py-3 focus:outline-none text-sm text-dark-6 dark:text-light-1"
+        />
         <input
           v-model="formData.email"
           type="text"
@@ -73,12 +92,18 @@ const getFieldError = (fieldName: string) => {
         </div>
         <div class="col-span-2">
           <button
+            :disabled="status === 'pending'"
             class="w-full text-light-1 bg-dark-6 hover:bg-dark-contrast-5 dark:bg-dark-contrast-4 dark:hover:bg-dark-contrast-5 rounded-md h-10 text-sm font-medium tracking-tight duration-300 transition-all ease-in-out"
           >
-            Submit Inquiry
+            <template v-if="status === 'pending'">
+              <Icon name="svg-spinners:ring-resize" size="18" />
+            </template>
+            <template v-else> Submit Inquiry </template>
           </button>
         </div>
       </form>
     </div>
   </Content>
 </template>
+
+<style></style>

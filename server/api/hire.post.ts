@@ -6,18 +6,19 @@ export default defineEventHandler(async (event) => {
 
   const errors: Record<string, string> = {}
 
-  if (!name) errors.name = "Name is required"
+  if (!name) errors.name = "Name is required!"
   if (!email) {
-    errors.email = "Email is required"
+    errors.email = "Email is required!"
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    errors.email = "Email format is invalid"
+    errors.email = "Email format is invalid!"
   }
-  if (!message) errors.message = "Message is required"
+  if (!message) errors.message = "Message is required!"
 
   if (Object.keys(errors).length > 0) {
+    const firstError = Object.values(errors)[0]
     throw createError({
       statusCode: 400,
-      statusMessage: 'Validation Failed',
+      statusMessage: firstError,
       data: { errors }
     })
   }
