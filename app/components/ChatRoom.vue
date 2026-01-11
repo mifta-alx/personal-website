@@ -4,6 +4,7 @@ const user = useSupabaseUser();
 const messages = ref([]);
 const isLoading = ref(true);
 const inputMessage = ref("");
+const replyingTo = ref(null);
 const chatContainer = ref(null);
 const isLoggingIn = ref(null);
 const config = useRuntimeConfig();
@@ -59,16 +60,39 @@ const fetchMessages = async () => {
   }
 };
 
+const setReply = (message) => {
+  replyingTo.value = {
+    id: message.id,
+    content: message.content,
+    user_name: message.user_name,
+  };
+
+  // Fokus ke input otomatis
+  const input = document.querySelector('input[type="text"]');
+  if (input) input.focus();
+};
+
+const cancelReply = () => {
+  replyingTo.value = null;
+};
+
 const sendChat = async () => {
   if (!inputMessage.value.trim() || !user.value) return;
 
-  await client.from("messages").insert({
+  const messageData = {
     content: inputMessage.value,
     user_id: user.value.sub,
     user_name: user.value.user_metadata.full_name || user.value.email,
     user_avatar: user.value.user_metadata.avatar_url,
-  });
+    // Tambahkan field reply (Pastikan kolom ini ada di tabel Supabase kamu)
+    reply_to_id: replyingTo.value?.id || null,
+    reply_to_name: replyingTo.value?.user_name || null,
+    reply_to_content: replyingTo.value?.content || null,
+  };
+
+  await client.from("messages").insert(messageData);
   inputMessage.value = "";
+  replyingTo.value = null;
 };
 
 onMounted(() => {
@@ -109,7 +133,7 @@ const handleLogout = async () => {
 
 <template>
   <div
-    class="flex flex-col max-h-[calc(100vh-80px)] md:min-h-[calc(100vh-48px)] w-full"
+    class="flex flex-col max-h-[calc(100vh-80px)] min-h-[calc(100svh-280px)] md:min-h-[calc(100vh-48px)] w-full"
   >
     <div
       class="p-4 flex justify-between items-center bg-light-contrast-2 dark:bg-dark-5 gap-2 rounded-t-xl"
@@ -130,7 +154,7 @@ const handleLogout = async () => {
       <button
         v-if="user"
         @click="handleLogout"
-        class="flex gap-1 cursor-pointer items-center justify-center w-fit bg-red-light hover:bg-red-contrast-light dark:bg-red-dark dark:hover:bg-red-contrast-dark transition-all duration-300 ease-in-out text-light-1 rounded-md h-8 px-2.5 text-xs font-semibold"
+        class="flex gap-1 cursor-pointer items-center justify-center w-fit bg-red-light hover:bg-red-contrast-light dark:bg-red-dark dark:hover:bg-red-contrast-dark transition-all duration-300 ease-in-out text-light-1 rounded-md h-8 px-3 text-xs font-semibold"
       >
         <Icon name="solar:logout-linear" size="14" />
         Logout
@@ -182,14 +206,36 @@ const handleLogout = async () => {
 
             <div
               :class="[
-                'px-4 py-2 rounded-2xl text-sm',
-                'break-all overflow-hidden whitespace-pre-wrap',
+                'inline-flex flex-col p-1 rounded-xl text-sm group relative max-w-2xs sm:max-w-md md:max-w-xs lg:max-w-lg',
+                'wrap-break-words',
                 m.user_id === user?.sub
-                  ? 'bg-blue-light dark:bg-blue-dark text-light-1 rounded-br-none'
+                  ? 'bg-blue-light dark:bg-blue-dark text-light-1 rounded-tr-none'
                   : 'bg-light-contrast-2 dark:bg-dark-contrast-5 text-dark-6 dark:text-light-1 rounded-tl-none',
               ]"
             >
-              {{ m.content }}
+              <div
+                v-if="m.reply_to_content"
+                class="min-w-0 flex-1 flex flex-col mb-1 p-2 rounded-lg bg-black/20 border-l-4 border-light-1 text-xs"
+              >
+                <p class="font-semibold text-light-1">{{ m.reply_to_name }}</p>
+                <p class="truncate">{{ m.reply_to_content }}</p>
+              </div>
+              <div class="px-2 py-1">
+                {{ m.content }}
+              </div>
+
+              <button
+                v-if="user"
+                @click="setReply(m)"
+                class="absolute top-1/2 cursor-pointer -translate-y-1/2 md:opacity-0 md:group-hover:opacity-100 transition-opacity p-1 text-dark-3 hover:bg-dark-4 rounded-full dark:text-light-3 flex items-center justify-center"
+                :class="
+                  m.user_id === user?.sub
+                    ? '-left-8 right-auto scale-x-[-1]'
+                    : '-right-8'
+                "
+              >
+                <Icon name="solar:reply-linear" size="18" />
+              </button>
             </div>
 
             <span class="text-[10px] text-dark-3 dark:text-light-3 mt-1 px-1">
@@ -200,10 +246,46 @@ const handleLogout = async () => {
       </template>
     </div>
 
-    <div v-if="user" class="p-2">
+    <div
+      v-if="user"
+      class="grid transition-[grid-template-rows] duration-200 ease-in-out"
+      :class="replyingTo ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'"
+    >
+      <div class="overflow-hidden">
+        <div
+          v-if="replyingTo"
+          class="pt-2 px-2 border-t border-light-3 dark:border-dark-4 flex gap-4 items-center w-full min-w-0 bg-light-contrast-2 dark:bg-dark-5"
+        >
+          <div
+            class="flex-1 w-0 flex flex-col bg-light-contrast-1 dark:bg-dark-4 rounded-md py-2 px-2 border-l-4 border-blue-light dark:border-blue-dark"
+          >
+            <p
+              class="text-blue-light dark:text-blue-dark text-xs font-semibold"
+            >
+              {{ replyingTo.user_name }}
+            </p>
+
+            <p class="text-dark-3 dark:text-light-3 text-xs truncate">
+              {{ replyingTo.content }}
+            </p>
+          </div>
+
+          <button
+            @click="cancelReply"
+            class="shrink-0 cursor-pointer text-dark-3 dark:text-light-3 bg-light-contrast-1 dark:bg-dark-4 dark:hover:bg-dark-5 rounded-full size-6 flex items-center justify-center mr-1 transition-all duration-300 ease-in-out"
+          >
+            <Icon name="iconoir:xmark" size="16" />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      v-if="user"
+      class="p-2 border-b rounded-b-xl border-light-3 dark:border-dark-4 bg-light-contrast-2 dark:bg-dark-5 mb-6 md:m-0"
+    >
       <form
         @submit.prevent="sendChat"
-        class="flex items-center gap-3 bg-light-contrast-2 dark:bg-dark-4 rounded-lg px-2 py-1.5"
+        class="flex items-center gap-3 bg-light-contrast-1 dark:bg-dark-4 rounded-lg px-2 py-1.5"
       >
         <input
           v-model="inputMessage"
@@ -217,7 +299,7 @@ const handleLogout = async () => {
             'size-8 rounded-md flex justify-center items-center transition-all duration-300 ease-in-out',
             inputMessage
               ? 'cursor-pointer bg-blue-light hover:bg-blue-contrast-light dark:bg-blue-dark dark:hover:bg-blue-contrast-dark text-white'
-              : 'bg-light-contrast-4 dark:bg-dark-3 text-white cursor-not-allowed',
+              : 'bg-light-contrast-3 dark:bg-dark-3 text-white cursor-not-allowed',
           ]"
         >
           <Icon name="solar:arrow-up-linear" size="20" />
