@@ -215,9 +215,9 @@ const handleLogout = async () => {
             >
               <div
                 v-if="m.reply_to_content"
-                class="min-w-0 flex-1 flex flex-col mb-1 p-2 rounded-lg bg-black/20 border-l-4 border-light-1 text-xs"
+                class="min-w-0 flex-1 flex flex-col mb-1 p-2 rounded-lg bg-black/10 dark:bg-black/20 border-l-4 border-light-1 text-xs"
               >
-                <p class="font-semibold text-light-1">{{ m.reply_to_name }}</p>
+                <p class="font-semibold text-dark-5 dark:text-light-1">{{ m.reply_to_name }}</p>
                 <p class="truncate">{{ m.reply_to_content }}</p>
               </div>
               <div class="px-2 py-1">
