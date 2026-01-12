@@ -25,14 +25,14 @@ useSeoMeta({
         <div class="flex flex-col gap-4">
           <div class="flex flex-col">
             <h1
-              class="text-dark-contrast-6 dark:text-light-1 font-bold tracking-tighter text-2xl"
+              class="text-dark-contrast-6 dark:text-light-1 font-bold tracking-tighter text-3xl"
             >
               About
             </h1>
             <p
-              class="text-dark-contrast-3 dark:text-light-6 font-medium text-lg"
+              class="text-dark-contrast-3 dark:text-light-6 font-medium text-sm mt-2 leading-6"
             >
-              Getting to know me better.
+              A brief introduction about who I am and what I do.
             </p>
           </div>
           <div class="flex flex-col gap-4">
@@ -52,7 +52,7 @@ useSeoMeta({
         <div class="flex flex-col gap-4">
           <SectionHeader
             title="Experience"
-            description="Technical Experience"
+            description="My professional journey and work history"
             icon="solar:case-linear"
           />
           <div v-if="workExperiences.length > 0" class="flex flex-col gap-4">
@@ -120,7 +120,7 @@ useSeoMeta({
         <div class="flex flex-col gap-4">
           <SectionHeader
             title="Education"
-            description="Academic Journey"
+            description="Formal education and academic background""
             icon="solar:square-academic-cap-linear"
           />
           <ItemCard
@@ -159,7 +159,7 @@ useSeoMeta({
         <div class="flex flex-col gap-4">
           <SectionHeader
             title="Involvement"
-            description="Organizations & Activities"
+            description="My contributions in organizations and communities"
             icon="solar:users-group-two-rounded-linear"
           />
           <div
