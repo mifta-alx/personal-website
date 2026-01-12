@@ -70,7 +70,7 @@ useSeoMeta({
         :delay="600"
         v-for="(image, index) in project.gallery"
         :key="index"
-        :class="'flex bg-light-2 dark:bg-dark-5 h-52 md:h-[calc(100svh/1.8)] rounded-lg items-center justify-center'"
+        :class="'flex bg-light-2 dark:bg-dark-5 min-h-52 py-8 md:min-h-[calc(100svh/1.8)] rounded-lg items-center justify-center'"
       >
         <div class="h-auto w-64 md:w-[calc(100svw/2.2)]">
           <NuxtImg

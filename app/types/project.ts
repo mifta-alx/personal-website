@@ -4,6 +4,7 @@ export interface Project {
   slug: string;
   name: string;
   title: string;
+  type: string;
   idea: string;
   description: string;
   cover: string;
