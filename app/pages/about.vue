@@ -11,10 +11,12 @@ definePageMeta({
   layout: "landing-page",
 });
 useSeoMeta({
-  title: "About | Miftakhussurur Al Maliki",
-  ogTitle: "About | Miftakhussurur Al Maliki",
-  description: "About Miftakhussurur Al Maliki.",
-  ogDescription: "About Miftakhussurur Al Maliki.",
+  title: "About - Miftakhussurur Al Maliki",
+  ogTitle: "About - Miftakhussurur Al Maliki",
+  description:
+    "Learn more about Miftakhussurur Al Maliki, a passionate Frontend Developer. Discover my professional journey, skills, and the experiences that shape my work in web development.",
+  ogDescription:
+    "Learn more about Miftakhussurur Al Maliki, a passionate Frontend Developer. Discover my professional journey, skills, and the experiences that shape my work in web development.",
 });
 </script>
 

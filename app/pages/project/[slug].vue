@@ -15,8 +15,8 @@ if (!project) {
 useSeoMeta({
   title: project?.title,
   ogTitle: project?.title,
-  description: "Project Miftakhussurur Al Maliki.",
-  ogDescription: "Project Miftakhussurur Al Maliki.",
+  description: `Detailed look into ${project?.title}, a project developed by Miftakhussurur Al Maliki.`,
+  ogDescription: `Detailed look into ${project?.title}, a project developed by Miftakhussurur Al Maliki.`,
 });
 </script>
 

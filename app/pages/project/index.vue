@@ -5,11 +5,10 @@ definePageMeta({
   layout: "landing-page",
 });
 useSeoMeta({
-  title: "Project | Miftakhussurur Al Maliki",
-  ogTitle: "Project | Miftakhussurur Al Maliki",
-  description: "Project Miftakhussurur Al Maliki.",
-  ogDescription: "Project Miftakhussurur Al Maliki.",
-});
+  title: "Projects - Miftakhussurur Al Maliki",
+  ogTitle: "Projects - Miftakhussurur Al Maliki",
+  description: "A showcase of my recent work, featuring web applications built with modern technologies like Vue, Nuxt, and Tailwind CSS. Explore my journey through code.",
+  ogDescription: "A showcase of my recent work, featuring web applications built with modern technologies like Vue, Nuxt, and Tailwind CSS. Explore my journey through code.",});
 </script>
 
 <template>

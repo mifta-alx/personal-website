@@ -3,11 +3,10 @@ definePageMeta({
   layout: "landing-page",
 });
 useSeoMeta({
-  title: "Hire Me | Miftakhussurur Al Maliki",
-  ogTitle: "Hire Me | Miftakhussurur Al Maliki",
-  description: "Hire Me Miftakhussurur Al Maliki.",
-  ogDescription: "Hire Me Miftakhussurur Al Maliki.",
-});
+  title: "Hire Me - Miftakhussurur Al Maliki",
+  ogTitle: "Hire Me - Miftakhussurur Al Maliki",
+ description: "Interested in working together? Reach out to Miftakhussurur Al Maliki for collaborations, job opportunities, or just to say hello. Let's build something amazing together!",
+  ogDescription: "Interested in working together? Reach out to Miftakhussurur Al Maliki for collaborations, job opportunities, or just to say hello. Let's build something amazing together.",});
 
 const formData = ref({
   name: "",
