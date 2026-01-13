@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { twMerge } from "tailwind-merge";
+
 const isOpen = ref(false);
 
 const props = defineProps({
@@ -51,12 +52,16 @@ const mergedImageClass = computed(() => {
       >
         <NuxtImg
           :src="image"
-          :alt="autoAlt"
-          :class="mergedImageClass"
           :custom="true"
           v-slot="{ src, isLoaded, imgAttrs }"
         >
-          <img v-if="isLoaded" v-bind="imgAttrs" :src="src" />
+          <img
+            v-if="isLoaded"
+            v-bind="imgAttrs"
+            :src="src"
+            :alt="autoAlt"
+            :class="mergedImageClass"
+          />
 
           <div
             v-else

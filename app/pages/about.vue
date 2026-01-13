@@ -120,7 +120,7 @@ useSeoMeta({
         <div class="flex flex-col gap-4">
           <SectionHeader
             title="Education"
-            description="Formal education and academic background""
+            description="Formal education and academic background"
             icon="solar:square-academic-cap-linear"
           />
           <ItemCard
