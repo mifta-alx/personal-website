@@ -14,10 +14,10 @@ const props = defineProps({
 <template>
   <NuxtLink
     :to="`/project/${project.slug}`"
-    class="group relative flex bg-light-2 dark:bg-dark-5 h-52 md:h-[calc(100svh/1.8)] rounded-lg items-center justify-center"
+    class="group relative flex bg-light-2 dark:bg-dark-5 py-6 px-32 min-h-52 md:min-h-[calc(100svh/1.8)] rounded-lg items-center justify-center"
   >
     <div
-      class="group-hover:scale-[1.02] transition-transform duration-500 h-auto w-64 md:w-[calc(100svw/2.4)]"
+      class="flex group-hover:scale-[1.02] transition-transform duration-500 h-auto w-auto"
     >
       <NuxtImg
         :src="`/images/${project.slug}/${project.cover}`"
