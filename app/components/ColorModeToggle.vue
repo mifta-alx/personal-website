@@ -12,7 +12,7 @@ const isDark = computed(() => colorMode.value === "dark");
   <ClientOnly>
     <button
       @click="toggleMode"
-      class="hidden relative md:flex h-8 w-28 cursor-pointer items-center rounded-full bg-light-contrast-2 p-1 transition-colors duration-300 ease-in-out dark:bg-dark-6"
+      class="relative flex h-8 w-28 cursor-pointer items-center rounded-full bg-light-contrast-2 p-1 transition-colors duration-300 ease-in-out dark:bg-dark-6"
       aria-label="Toggle Color Mode"
     >
       <div

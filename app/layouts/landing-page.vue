@@ -41,7 +41,7 @@
               </NuxtLink>
             </div>
           </SidebarGroup>
-          <div class="flex items-center justify-center mt-2">
+          <div class="hidden md:flex items-center justify-center mt-2">
             <ColorModeToggle />
           </div>
         </div>
