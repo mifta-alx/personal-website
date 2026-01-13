@@ -14,7 +14,7 @@ const props = defineProps({
 <template>
   <NuxtLink
     :to="`/project/${project.slug}`"
-    class="group relative flex bg-light-2 dark:bg-dark-5 py-6 px-32 min-h-52 md:min-h-[calc(100svh/1.8)] rounded-lg items-center justify-center"
+    class="group relative flex bg-light-2 dark:bg-dark-5 py-10 md:py-6 px-14 sm:px-20 lg:px-32 min-h-52 lg:min-h-80 xl:min-h-[calc(100svh/1.8)] rounded-lg items-center justify-center"
   >
     <div
       class="flex group-hover:scale-[1.02] transition-transform duration-500 h-auto w-auto"
