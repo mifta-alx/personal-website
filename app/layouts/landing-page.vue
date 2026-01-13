@@ -4,6 +4,7 @@
       <Sidebar>
         <div class="flex flex-col gap-2">
           <Profile />
+          <SidebarDivider />
           <SidebarGroup>
             <SidebarMenu>
               <SidebarMenuItem>
@@ -17,7 +18,9 @@
                 >
               </SidebarMenuItem>
               <SidebarMenuItem>
-                <SidebarMenuButton href="/project" icon="solar:code-2-linear"
+                <SidebarMenuButton
+                  href="/project"
+                  icon="solar:programming-linear"
                   >Project</SidebarMenuButton
                 >
               </SidebarMenuItem>
@@ -38,6 +41,9 @@
               </NuxtLink>
             </div>
           </SidebarGroup>
+          <div class="flex items-center justify-center mt-2">
+            <ColorModeToggle />
+          </div>
         </div>
         <SidebarFooter />
       </Sidebar>

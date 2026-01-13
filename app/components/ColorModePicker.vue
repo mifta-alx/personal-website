@@ -10,7 +10,7 @@ const toggleMode = () => {
   <ClientOnly>
     <button
       @click="toggleMode"
-      class="flex w-fit items-center justify-center p-1.5 rounded-full active:bg-light-contrast-2 hover:bg-light-contrast-2 dark:active:bg-dark-5 dark:hover:bg-dark-5 transition-all duration-300 ease-in"
+      class="md:hidden cursor-pointer flex w-fit items-center justify-center p-1.5 rounded-full active:bg-light-contrast-2 hover:bg-light-contrast-2 dark:active:bg-dark-5 dark:hover:bg-dark-5 transition-all duration-300 ease-in"
       aria-label="Toggle Color Mode"
     >
       <Icon
@@ -18,7 +18,7 @@ const toggleMode = () => {
         v-if="colorMode.value === 'dark'"
         class="size-5"
       />
-      <Icon name="solar:moon-stars-linear" v-else class="size-5" />
+      <Icon name="solar:moon-linear" v-else class="size-5" />
     </button>
   </ClientOnly>
 </template>

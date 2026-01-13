@@ -2,23 +2,31 @@
 import { ref } from "vue";
 
 const email = "alx.yoi67@gmail.com";
-const copyText = ref("Copy Email");
+const statusMsg = ref("");
+const toastType = ref<"success" | "error">("success");
+const showToast = ref(false);
 
 const handleCopyEmail = async () => {
   try {
     await navigator.clipboard.writeText(email);
-    copyText.value = "Copied!";
-
-    setTimeout(() => {
-      copyText.value = "Copy Email";
-    }, 2000);
+    statusMsg.value = "Email copied to clipboard";
+    toastType.value = "success";
+    showToast.value = true;
   } catch (error) {
-    console.error("Failed to copy email:", error);
+    statusMsg.value = "Failed to copy email";
+    toastType.value = "error";
+    showToast.value = true;
   }
 };
 </script>
 
 <template>
+  <ToastIsland
+    :show="showToast"
+    :message="statusMsg"
+    :type="toastType"
+    @close="showToast = false"
+  />
   <div
     class="hidden md:flex flex-col px-2 pt-8 items-center justify-center gap-2"
   >
@@ -42,12 +50,6 @@ const handleCopyEmail = async () => {
       Miftakhussurur Al Maliki
     </p>
     <div class="flex flex-col gap-2 justify-between items-center">
-      <div class="capitalize flex flex-row items-center gap-2 shrink-0">
-        <div class="rounded-full size-1.5 bg-dark-1 dark:bg-dark-2" />
-        <p class="text-sm text-dark-4 dark:text-dark-contrast-1 font-medium">
-          Frontend Developer
-        </p>
-      </div>
       <div
         class="uppercase flex flex-row items-center gap-1 bg-green-200/50 dark:bg-green-900/40 rounded-full px-2 py-0.5 shrink-0"
       >
@@ -72,14 +74,10 @@ const handleCopyEmail = async () => {
         class="flex gap-1 cursor-pointer items-center justify-center w-full bg-light-contrast-1 hover:bg-light-4 dark:bg-dark-contrast-6 dark:hover:bg-dark-contrast-4 outline outline-light-4 dark:outline-dark-contrast-4 transition-all duration-300 ease-in-out text-dark-6 dark:text-light-1 rounded-md h-8 text-xs font-semibold"
       >
         <Icon
-          :name="
-            copyText === 'Copied!'
-              ? 'solar:unread-linear'
-              : 'solar:copy-line-duotone'
-          "
-          :size="copyText === 'Copied!' ? '18' : '14'"
+          name="solar:copy-line-duotone"
+          size="14"
         />
-        {{ copyText }}
+        Copy Email
       </button>
     </div>
   </div>
