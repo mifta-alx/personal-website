@@ -13,6 +13,7 @@
     "@nuxt/icon": "2.1.1",
     "@nuxt/image": "2.0.0",
     "@nuxtjs/supabase": "^2.0.3",
+    "@supabase/supabase-js": "^2.90.1",
     "@tailwindcss/vite": "^4.1.18",
     "@vueuse/motion": "^3.0.3",
     "nuxt": "^4.2.2",
@@ -22,6 +23,7 @@
     "vue-router": "^4.6.4"
   },
   "devDependencies": {
+    "@iconify-json/cib": "^1.2.3",
     "@iconify-json/solar": "^1.2.5",
     "@nuxtjs/color-mode": "^4.0.0"
   }
