@@ -2,6 +2,27 @@ import type { Project } from "~/types/project";
 
 const projects: Project[] = [
     {
+        slug: "tiga-jajan",
+        name: "TigaJajan POS",
+        title: "TigaJajan: Full-stack Consignment POS System",
+        type: "Web Platform",
+        idea: "Digitalizing the snack consignment ecosystem to eliminate manual bookkeeping and stock discrepancies.",
+        description: "Developed a comprehensive POS (Point of Sales) and Inventory Management system to digitize a traditionally manual snack consignment business. I engineered a robust platform that replaces paper-based logs with a synchronized digital workflow for both Admin and Staff. I implemented a streamlined Cashier Interface for rapid transaction processing, automated stock entry, and return (retur) management. By integrating a centralized Supabase database, the system ensures 100% data accuracy in calculating merchant profit-sharing, reducing human error by significant margins, and providing real-time sales visibility that was previously impossible with manual records.",
+        cover: "tiga-jajan-1.webp",
+        framework: "Nuxt",
+        role: "Fullstack Developer",
+        technologies: ["Javascript", "Vue", "Nuxt", "Tailwind", "Supabase"],
+        gallery: [
+            "tiga-jajan-1.webp",
+            "tiga-jajan-2.webp",
+            "tiga-jajan-3.webp",
+            "tiga-jajan-4.webp",
+            "tiga-jajan-5.webp",
+            "tiga-jajan-6.webp",
+            "tiga-jajan-7.webp",
+            "tiga-jajan-8.webp",
+        ]
+    }, {
         slug: "siam",
         name: "SIAM",
         title: "SIAM : Sistem Informasi Akademik Mahasiswa",
@@ -171,6 +192,7 @@ const frameworkType = {
     "Typescript": "devicon:typescript",
     "Javascript": "devicon:javascript",
     "Next": "devicon:nextjs",
+    "Vue": "logos:vue",
     "Nuxt": "devicon:nuxt",
     "Sveltekit": "devicon:svelte",
     "React-Native": "devicon:reactnative",
@@ -181,14 +203,16 @@ const frameworkType = {
     "Laravel": "devicon:laravel",
     "Livewire": "devicon:livewire",
     "Php": "devicon:php",
-    "Tanstack": "logos:react-query-icon"
+    "Tanstack": "logos:react-query-icon",
+    "Supabase": "logos:supabase-icon"
 }
 
 const iconSize = {
     "Typescript": "18",
     "Javascript": "18",
     "Next": "18",
-    "Nuxt": "18",
+    "Vue": "18",
+    "Nuxt": "14",
     "Sveltekit": "14",
     "React-Native": "14",
     "React": "14",
@@ -199,6 +223,7 @@ const iconSize = {
     "Livewire": "14",
     "Php": "14",
     "Tanstack": "14",
+    "Supabase": "18",
 }
 
 export { projects, frameworkType, iconSize };
