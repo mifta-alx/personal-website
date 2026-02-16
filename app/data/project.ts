@@ -11,7 +11,7 @@ const projects: Project[] = [
         cover: "tiga-jajan-1.webp",
         framework: "Nuxt",
         role: "Fullstack Developer",
-        technologies: ["Javascript", "Vue", "Nuxt", "Tailwind", "Supabase"],
+        technologies: ["Typescript", "Vue", "Nuxt", "Tailwind", "Supabase"],
         gallery: [
             "tiga-jajan-1.webp",
             "tiga-jajan-2.webp",
