@@ -1,6 +1,13 @@
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
+  app: {
+    head: {
+      meta: [
+        { name: 'google-site-verification', content: '7AOFh7O3qr2fImEVzTlbw59OI4K-UYmolty8VZ8DW0k' }
+      ]
+    }
+  },
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   css: ['./app/assets/css/main.css'],
