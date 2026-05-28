@@ -56,6 +56,13 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxt/image',
     '@vueuse/motion/nuxt',
-    '@nuxtjs/supabase'
+    '@nuxtjs/supabase',
+    '@nuxtjs/seo',
   ],
+  site: {
+    url: 'https://withalx.com',
+    name: 'Miftakhussurur Al Maliki - Frontend Developer',
+    description: 'Explore the professional portfolio of Miftakhussurur Al Maliki, a Frontend Developer specialized in building modern, responsive, and high-performance web applications.',
+    defaultLocale: 'en',
+  },
 })
