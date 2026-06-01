@@ -8,7 +8,7 @@
           <SidebarGroup>
             <SidebarMenu>
               <SidebarMenuItem>
-                <SidebarMenuButton href="/home" icon="solar:home-2-linear"
+                <SidebarMenuButton href="/" icon="solar:home-2-linear"
                   >Home</SidebarMenuButton
                 >
               </SidebarMenuItem>
