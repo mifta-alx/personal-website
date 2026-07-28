@@ -12,27 +12,28 @@ const isDark = computed(() => colorMode.value === "dark");
   <ClientOnly>
     <button
       @click="toggleMode"
-      class="relative flex h-8 w-28 cursor-pointer items-center rounded-full bg-light-contrast-2 p-1 transition-colors duration-300 ease-in-out dark:bg-dark-6"
+      class="relative flex h-10 w-24 cursor-pointer items-center rounded-full bg-secondary/10 p-1 transition-colors duration-300 ease-in-out"
       aria-label="Toggle Color Mode"
     >
       <div
-        class="absolute z-20 h-6 transform rounded-full w-12 bg-white dark:bg-dark-1 shadow-md transition-transform duration-300 ease-in-out flex items-center justify-center"
-        :class="isDark ? 'translate-x-14' : 'translate-x-0'"
-      >
-        <Icon
-          v-if="isDark"
-          name="solar:moon-linear"
-          class="size-4 text-light-1"
-        />
-        <Icon v-else name="solar:sun-linear" class="size-4 text-dark-5" />
-      </div>
+        class="absolute z-20 h-8 transform rounded-full w-10 bg-background shadow-sm transition-transform duration-300 ease-in-out flex items-center justify-center"
+        :class="isDark ? 'translate-x-12' : 'translate-x-0'"
+      />
 
-      <div class="flex w-full justify-between">
-        <div class="flex items-center justify-center w-12">
-          <Icon name="solar:sun-linear" class="size-4 text-light-6" />
+      <div class="flex gap-2 absolute z-30">
+        <div class="flex items-center justify-center w-10">
+          <Icon
+            :name="!isDark ? 'ph:sun-fill' : 'ph:sun'"
+            :class="
+              cn('size-4', !isDark ? 'text-primary' : 'text-secondary/50')
+            "
+          />
         </div>
-        <div class="flex items-center justify-center w-12">
-          <Icon name="solar:moon-linear" class="size-4 text-dark-1" />
+        <div class="flex items-center justify-center w-10">
+          <Icon
+            :name="isDark ? 'ph:moon-fill' : 'ph:moon'"
+            :class="cn('size-4', isDark ? 'text-primary' : 'text-secondary/50')"
+          />
         </div>
       </div>
     </button>
