@@ -21,7 +21,7 @@ export default defineNuxtConfig({
   nitro: {
     preset: "vercel",
     externals: {
-      inline: ["tslib"],
+      inline: ["tslib", "h3"],
     },
   },
   experimental: {
@@ -46,7 +46,7 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
     ssr: {
-      noExternal: ["tslib", "@nuxtjs/seo"],
+      noExternal: true,
     },
   },
   build: {
