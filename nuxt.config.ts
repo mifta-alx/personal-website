@@ -34,7 +34,7 @@ export default defineNuxtConfig({
     mode: "css",
     cssLayer: "base",
     serverBundle: {
-      collections: ["solar"],
+      collections: ["ph", "simple-icons"],
     },
   },
   typescript: {
@@ -79,10 +79,10 @@ export default defineNuxtConfig({
   sitemap: {
     sources: ["/api/sitemap"],
   },
-  routeRules: {
-    "/": { prerender: true },
-    "/about": { prerender: true },
-    // '/project/**': { isr: 3600 }, // Cek update setiap jam
-    "/stack": { prerender: true },
-  },
+  // routeRules: {
+  //   "/": { prerender: true },
+  //   "/about": { prerender: true },
+  //   // '/project/**': { isr: 3600 }, // Cek update setiap jam
+  //   "/stack": { prerender: true },
+  // },
 });

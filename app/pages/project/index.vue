@@ -1,18 +1,17 @@
 <script setup lang="ts">
-import { projects } from "~/data/project";
 
-definePageMeta({
-  layout: "landing-page",
-});
-useSeoMeta({
-  title: "Projects - Miftakhussurur Al Maliki",
-  ogTitle: "Projects - Miftakhussurur Al Maliki",
-  description: "A showcase of my recent work, featuring web applications built with modern technologies like Vue, Nuxt, and Tailwind CSS. Explore my journey through code.",
-  ogDescription: "A showcase of my recent work, featuring web applications built with modern technologies like Vue, Nuxt, and Tailwind CSS. Explore my journey through code.",});
+// definePageMeta({
+//   layout: "landing-page",
+// });
+// useSeoMeta({
+//   title: "Projects - Miftakhussurur Al Maliki",
+//   ogTitle: "Projects - Miftakhussurur Al Maliki",
+//   description: "A showcase of my recent work, featuring web applications built with modern technologies like Vue, Nuxt, and Tailwind CSS. Explore my journey through code.",
+//   ogDescription: "A showcase of my recent work, featuring web applications built with modern technologies like Vue, Nuxt, and Tailwind CSS. Explore my journey through code.",});
 </script>
 
 <template>
-  <Content>
+  <!-- <Content>
     <div class="flex flex-col gap-4">
       <BlurReveal :duration="800">
         <div class="flex flex-col">
@@ -38,5 +37,5 @@ useSeoMeta({
         </div>
       </BlurReveal>
     </div>
-  </Content>
+  </Content> -->
 </template>

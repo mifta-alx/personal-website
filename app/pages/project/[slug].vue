@@ -1,27 +1,27 @@
 <script setup lang="ts">
-import { frameworkType, projects } from "~/data/project";
+// import { frameworkType, projects } from "~/data/project";
 
-definePageMeta({
-  layout: "landing-page",
-});
-const route = useRoute();
-const slug = route.params.slug;
+// definePageMeta({
+//   layout: "landing-page",
+// });
+// const route = useRoute();
+// const slug = route.params.slug;
 
-const project = projects?.find((p) => p.slug === slug);
+// const project = projects?.find((p) => p.slug === slug);
 
-if (!project) {
-  throw createError({ statusCode: 404, statusMessage: "Project Not Found" });
-}
-useSeoMeta({
-  title: project?.title,
-  ogTitle: project?.title,
-  description: `Detailed look into ${project?.title}, a project developed by Miftakhussurur Al Maliki.`,
-  ogDescription: `Detailed look into ${project?.title}, a project developed by Miftakhussurur Al Maliki.`,
-});
+// if (!project) {
+//   throw createError({ statusCode: 404, statusMessage: "Project Not Found" });
+// }
+// useSeoMeta({
+//   title: project?.title,
+//   ogTitle: project?.title,
+//   description: `Detailed look into ${project?.title}, a project developed by Miftakhussurur Al Maliki.`,
+//   ogDescription: `Detailed look into ${project?.title}, a project developed by Miftakhussurur Al Maliki.`,
+// });
 </script>
 
 <template>
-  <Content>
+  <!-- <Content>
     <BackButton />
     <div class="flex flex-col gap-4 mt-8 md:mt-12">
       <div
@@ -83,5 +83,5 @@ useSeoMeta({
         </div>
       </BlurReveal>
     </div>
-  </Content>
+  </Content> -->
 </template>

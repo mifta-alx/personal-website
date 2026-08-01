@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-2 md:hidden px-1.5 pb-1.5">
+  <!-- <div class="flex flex-col gap-2 md:hidden px-1.5 pb-1.5">
     <div
       class="w-full rounded-xl bg-light-2 dark:bg-dark-5 p-5 border border-light-2 dark:border-dark-5 flex flex-row justify-between items-center gap-4"
     >
@@ -43,5 +43,5 @@
         &copy; 2026 Miftakhussurur Al Maliki
       </p>
     </div>
-  </div>
+  </div> -->
 </template>
