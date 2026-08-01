@@ -20,6 +20,9 @@ export default defineNuxtConfig({
   css: ["~/assets/css/main.css"],
   nitro: {
     preset: "vercel",
+    unenv: {
+      polyfill: ["node:events"],
+    },
   },
   experimental: {
     payloadExtraction: false,
@@ -65,6 +68,7 @@ export default defineNuxtConfig({
     "@nuxtjs/supabase",
     "@nuxtjs/seo",
     "@pinia/nuxt",
+    "@nuxtjs/sitemap",
   ],
   site: {
     url: "https://withalx.com",
