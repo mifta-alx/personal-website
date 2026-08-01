@@ -18,12 +18,7 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
   css: ["~/assets/css/main.css"],
-  nitro: {
-    preset: "vercel",
-    externals: {
-      inline: ["tslib", "h3"],
-    },
-  },
+
   experimental: {
     payloadExtraction: false,
   },
@@ -45,12 +40,6 @@ export default defineNuxtConfig({
   },
   vite: {
     plugins: [tailwindcss()],
-    ssr: {
-      noExternal: true,
-    },
-  },
-  build: {
-    transpile: ["tslib"],
   },
   colorMode: {
     classSuffix: "",
@@ -70,7 +59,6 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxtjs/color-mode",
     "@nuxt/image",
-    "@vueuse/motion/nuxt",
     "@nuxtjs/supabase",
     "@pinia/nuxt",
     "@nuxtjs/sitemap",
@@ -82,9 +70,6 @@ export default defineNuxtConfig({
     description:
       "Portfolio of Miftakhussurur Al Maliki, a Frontend Developer crafting solid, intuitive web experiences.",
     defaultLocale: "en",
-  },
-  seo: {
-    redirectToCanonicalSiteUrl: false,
   },
   sitemap: {
     sources: ["/api/sitemap"],
