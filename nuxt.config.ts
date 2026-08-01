@@ -72,12 +72,12 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@vueuse/motion/nuxt",
     "@nuxtjs/supabase",
-    "@nuxtjs/seo",
     "@pinia/nuxt",
     "@nuxtjs/sitemap",
+    "@nuxtjs/robots",
   ],
   site: {
-    url: "https://withalx.com",
+    url: process.env.NUXT_PUBLIC_SITE_URL || "https://withalx.com",
     name: "Miftakhussurur Al Maliki",
     description:
       "Portfolio of Miftakhussurur Al Maliki, a Frontend Developer crafting solid, intuitive web experiences.",
