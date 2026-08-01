@@ -20,8 +20,8 @@ export default defineNuxtConfig({
   css: ["~/assets/css/main.css"],
   nitro: {
     preset: "vercel",
-    unenv: {
-      polyfill: ["node:events"],
+    externals: {
+      inline: ["tslib"],
     },
   },
   experimental: {
@@ -45,6 +45,12 @@ export default defineNuxtConfig({
   },
   vite: {
     plugins: [tailwindcss()],
+    ssr: {
+      noExternal: ["tslib", "@nuxtjs/seo"],
+    },
+  },
+  build: {
+    transpile: ["tslib"],
   },
   colorMode: {
     classSuffix: "",
@@ -83,10 +89,4 @@ export default defineNuxtConfig({
   sitemap: {
     sources: ["/api/sitemap"],
   },
-  // routeRules: {
-  //   "/": { prerender: true },
-  //   "/about": { prerender: true },
-  //   // '/project/**': { isr: 3600 }, // Cek update setiap jam
-  //   "/stack": { prerender: true },
-  // },
 });
