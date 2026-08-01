@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  layout: "landing-page",
+  layout: "main-layout",
 });
 useSeoMeta({
   title: "Hire Me - Miftakhussurur Al Maliki",

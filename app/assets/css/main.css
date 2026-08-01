@@ -1,68 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400..700&display=swap");
 @import "tailwindcss";
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-apple: "SF Pro Display", "-apple-system", "BlinkMacSystemFont", "Helvetica Neue", "Segoe UI", "Roboto", "Arial", sans-serif;
-  --color-light-1: rgb(242, 242, 247);
-  --color-light-2: rgb(229, 229, 234);
-  --color-light-3: rgb(209, 209, 214);
-  --color-light-4: rgb(199, 199, 204);
-  --color-light-5: rgb(174, 174, 178);
-  --color-light-6: rgb(142, 142, 147);
-  --color-light-contrast-1: rgb(235, 235, 240);
-  --color-light-contrast-2: rgb(216, 216, 220);
-  --color-light-contrast-3: rgb(188, 188, 192);
-  --color-light-contrast-4: rgb(174, 174, 178);
-  --color-light-contrast-5: rgb(142, 142, 147);
-  --color-light-contrast-6: rgb(108, 108, 112);
-  --color-dark-1: rgb(142, 142, 147);
-  --color-dark-2: rgb(99, 99, 102);
-  --color-dark-3: rgb(72, 72, 74);
-  --color-dark-4: rgb(58, 58, 60);
-  --color-dark-5: rgb(44, 44, 46);
-  --color-dark-6: rgb(28, 28, 30);
-  --color-dark-contrast-1: rgb(174, 174, 178);
-  --color-dark-contrast-2: rgb(124, 124, 128);
-  --color-dark-contrast-3: rgb(84, 84, 86);
-  --color-dark-contrast-4: rgb(68, 68, 70);
-  --color-dark-contrast-5: rgb(54, 54, 56);
-  --color-dark-contrast-6: rgb(36, 36, 38);
-  --shadow-light :  0px 0px 3px 0px rgb(209, 209, 214);
-  --shadow-dark :  0px 0px 3px 0px rgb(58, 58, 60);
-  --color-red-light: rgb(255, 56, 60);
-  --color-red-dark: rgb(255, 66, 69);
-  --color-red-contrast-light: rgb(233, 21, 45);
-  --color-red-contrast-dark: rgb(255, 97, 101);
-  --color-blue-light: rgb(0, 136, 255);
-  --color-blue-dark: rgb(0, 145, 255);
-  --color-blue-contrast-light: rgb(30, 110, 244);
-  --color-blue-contrast-dark: rgb(92, 184, 255);
+  --font-apple:
+    "SF Pro Display", "-apple-system", "BlinkMacSystemFont", "Helvetica Neue",
+    "Segoe UI", "Roboto", "Arial", sans-serif;
+  --font-jetbrains: "JetBrains Mono", monospace;
+  --font-sans: var(--font-apple);
+  --font-mono: var(--font-jetbrains);
+  --color-background: var(--background);
+  --color-sidebar: var(--sidebar);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-border: var(--border);
+}
+
+:root {
+  --background: #f7f7f7;
+  --sidebar: #ffffff;
+  --primary: #100c08;
+  --border: #dbdada;
+  --secondary: #676562;
+}
+
+.dark {
+  --background: #100c08;
+  --sidebar: #14100c;
+  --primary: #f7f7f7;
+  --border: #2d2a26;
+  --secondary: oklch(60.773% 0.00379 67.344);
 }
 
 @layer base {
-  html {
-    background-color: var(--color-light-1);
-  }
-
-  html.dark {
-    background-color: var(--color-dark-6);
-  }
-
-  html, body {
-    @apply bg-light-1 text-dark-6;
-    font-family: var(--font-apple);
+  html,
+  body {
+    font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    min-height: 100%;    
+    min-height: 100%;
     /* Tambahkan rendering teks khas Apple agar lebih tajam */
+    /* scroll-behavior: smooth; */
     text-rendering: optimizeLegibility;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-
-  @variant dark {
-    html, body {
-      @apply bg-dark-6 text-light-1;
+    *,
+    ::before,
+    ::after {
+      transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
     }
   }
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
 }

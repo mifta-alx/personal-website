@@ -8,12 +8,19 @@ const props = defineProps({
     required: true,
   },
   icon: {
+    type: [String, null],
+    default: null,
+  },
+  target: {
     type: String,
-    default: "solar:home-2-linear",
+    default: "_self",
   },
 });
 
 const isActive = computed(() => {
+  if (props.href === "/") {
+    return route.path === "/";
+  }
   return route.path.startsWith(props.href);
 });
 </script>
@@ -21,15 +28,24 @@ const isActive = computed(() => {
 <template>
   <NuxtLink
     :to="href"
+    :target="target"
+    :class="
+      cn(
+        isActive ? 'text-primary bg-secondary/5' : 'text-secondary',
+        'group inline-flex gap-2.5 w-full h-10 items-center justify-start tracking-wide shrink-0 overflow-hidden hover:scale-[1.04] rounded-lg py-2 px-3 text-left text-base text-nowrap transition-all duration-300 ease-in-out outline-none',
+        'focus-visible:bg-secondary/5 focus-visible:text-primary hover:bg-secondary/5 hover:text-primary',
+      )
+    "
+  >
+    <!-- <NuxtLink
+    :to="href"
     :class="{
-      'bg-light-contrast-2 text-dark-6 dark:bg-dark-5 dark:text-light-1! scale-100!':
+      'bg-light-contrast-2 text-dark-6 scale-100!':
         isActive,
     }"
-    class="group flex h-8 w-8 md:w-full md:h-10 items-center justify-center md:justify-start gap-2.5 shrink-0 overflow-hidden hover:scale-[1.04] rounded-full md:rounded-lg md:px-3 text-left text-sm text-nowrap transition-all duration-300 ease-in-out hover:bg-light-contrast-2 text-dark-2 hover:text-dark-6 dark:hover:bg-dark-5 dark:text-light-6 dark:hover:text-light-1"
-  >
-    <Icon :name="icon" class="size-5 md:size-4" />
-    <div class="hidden md:inline-block">
-      <slot />
-    </div>
+    class="group flex h-8 w-8 md:w-full md:h-10 items-center justify-center md:justify-start gap-2.5 shrink-0 overflow-hidden hover:scale-[1.04] rounded-full md:rounded-lg md:px-3 text-left text-base text-nowrap transition-all duration-300 ease-in-out "
+  > -->
+    <Icon v-if="icon" :name="icon" class="size-5.5" />
+    <slot />
   </NuxtLink>
 </template>
