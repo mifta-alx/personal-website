@@ -74,7 +74,7 @@ export default defineNuxtConfig({
     defaultLocale: "en",
   },
   seo: {
-    redirectToCanonicalSiteUrl: true,
+    redirectToCanonicalSiteUrl: false,
   },
   sitemap: {
     sources: ["/api/sitemap"],
