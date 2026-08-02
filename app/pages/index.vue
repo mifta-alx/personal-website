@@ -5,10 +5,10 @@ definePageMeta({
   layout: "main-layout",
 });
 useSeoMeta({
-  title: "Miftakhussurur Al Maliki | Frontend Developer",
+  title: "Miftakhussurur Al Maliki",
   description:
     "Mifta is a Frontend Developer focused on building solid, intuitive web applications. Precision in code, curiosity in life.",
-  ogTitle: "Miftakhussurur Al Maliki | Frontend Developer",
+  ogTitle: "Miftakhussurur Al Maliki",
   ogDescription:
     "Building solid, intuitive web applications. Frontend Developer based in Malang, Indonesia.",
   ogType: "website",
