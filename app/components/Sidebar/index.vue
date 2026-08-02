@@ -23,13 +23,11 @@ watch(
       cn(
         'xl:hidden fixed top-0 left-0 right-0 z-50 flex flex-col items-center justify-center w-full',
         isMobileOpen ? 'bg-sidebar' : 'bg-background',
-        'lg:py-6 p-5 lg:px-10 xl:px-20'
+        'lg:py-6 p-5 lg:px-10 xl:px-20',
       )
     "
   >
-    <div
-      class="flex items-center justify-between w-full max-w-3xl"
-    >
+    <div class="flex items-center justify-between w-full max-w-3xl">
       <ColorModeToggle />
       <button
         type="button"
@@ -43,10 +41,19 @@ watch(
         aria-label="Toggle Menu"
         @click="toggle"
       >
-        <Icon
-          :name="isMobileOpen ? 'ph:x-bold' : 'ph:list-bold'"
-          class="size-5 text-secondary/50"
-        />
+        <div class="relative size-5 flex flex-col justify-center items-center">
+          <!-- Garis 1 (Atas) -->
+          <div
+            class="h-0.5 w-5 bg-secondary/50 rounded-full transition-all duration-300 ease-in-out absolute"
+            :class="isMobileOpen ? 'rotate-45' : '-translate-y-1'"
+          />
+
+          <!-- Garis 2 (Bawah) -->
+          <div
+            class="h-0.5 w-5 bg-secondary/50 rounded-full transition-all duration-300 ease-in-out absolute"
+            :class="isMobileOpen ? '-rotate-45' : 'translate-y-1'"
+          />
+        </div>
       </button>
     </div>
 

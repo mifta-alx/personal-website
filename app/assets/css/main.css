@@ -36,6 +36,7 @@
 @layer base {
   html,
   body {
+    background-color: var(--color-background);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
