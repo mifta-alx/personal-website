@@ -1,4 +1,5 @@
 import tailwindcss from "@tailwindcss/vite";
+import pkg from "./package.json"
 
 export default defineNuxtConfig({
   app: {
@@ -25,7 +26,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     discordWebhookUrl: process.env.DISCORD_WEBHOOK_URL,
     public: {
-      authorId: process.env.AUTHOR_ID,
+      appVersion: pkg.version,
     },
   },
   icon: {
