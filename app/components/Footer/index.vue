@@ -16,7 +16,7 @@ const version = config.public.appVersion;
       </p>
     </div>
     <div class="flex flex-row justify-between items-center gap-6">
-      <div class="flex flex-row gap-3 items-center">
+      <div class="flex flex-row gap-2 items-center">
         <FooterContactItem
           v-for="item in contacts"
           :key="item.url"
