@@ -52,6 +52,11 @@ export const stackDetails: Stack = {
       href: "https://gemini.google.com/",
     },
     {
+      name: "Ollama",
+      icon: "simple-icons:ollama",
+      href: "https://ollama.com/",
+    },
+    {
       name: "Tailwind",
       icon: "simple-icons:tailwindcss",
       href: "https://tailwindcss.com/",

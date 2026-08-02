@@ -18,18 +18,18 @@
 }
 
 :root {
-  --background: #f7f7f7;
-  --sidebar: #ffffff;
-  --primary: #100c08;
-  --border: #dbdada;
-  --secondary: #676562;
+  --background: oklch(97.614% 0.00011 271.152);
+  --sidebar: oklch(100% 0.00011 271.152);
+  --primary: oklch(15.796% 0.01086 67.78);
+  --border: oklch(88.915% 0.00107 11.966);
+  --secondary: oklch(50.76% 0.00526 78.145);
 }
 
 .dark {
-  --background: #100c08;
-  --sidebar: #14100c;
-  --primary: #f7f7f7;
-  --border: #2d2a26;
+  --background: oklch(15.796% 0.01086 67.78);
+  --sidebar: oklch(17.653% 0.01039 67.027);
+  --primary: oklch(97.614% 0.00011 271.152);
+  --border: oklch(28.678% 0.00836 75.195);
   --secondary: oklch(60.773% 0.00379 67.344);
 }
 
