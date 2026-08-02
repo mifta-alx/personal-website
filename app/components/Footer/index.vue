@@ -12,7 +12,7 @@ const version = config.public.appVersion;
         <span class="font-mono text-xs">v{{ version }}</span>
       </div>
       <p class="text-secondary text-sm">
-        &copy; {{ new Date().getFullYear() }} Miftakhussurur Al Maliki
+        &copy; {{ new Date().getFullYear() }} Miftakhussurur
       </p>
     </div>
     <div class="flex flex-row justify-between items-center gap-6">

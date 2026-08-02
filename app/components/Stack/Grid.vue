@@ -21,7 +21,7 @@ const emptySlots = computed(() => {
       <div
         v-for="i in emptySlots"
         :key="`empty-${i}`"
-        class="hidden lg:block bg-background border-b border-secondary/10 border-r lg:nth-[4n]:border-r-0"
+        class="block bg-background border-b border-secondary/10 border-r lg:nth-[4n]:border-r-0"
       />
     </template>
   </div>
