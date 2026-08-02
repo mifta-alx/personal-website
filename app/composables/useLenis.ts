@@ -11,37 +11,36 @@ export const useLenis = () => {
   const nuxtApp = useNuxtApp();
 
   const getLenisInstance = () => {
-    return nuxtApp.$lenis || (typeof window !== 'undefined' ? (window as any).$lenis : null);
+    return (
+      nuxtApp.$lenis ||
+      (typeof window !== "undefined" ? (window as any).$lenis : null)
+    );
   };
 
   const scrollTo = (
     target: string | HTMLElement | number,
-    options?: ScrollToOptions
+    options?: ScrollToOptions,
   ) => {
     if (import.meta.server) return;
 
     const lenis = getLenisInstance();
 
-    let targetElement: HTMLElement | number | null = null;
-    if (typeof target === 'string') {
-      targetElement = document.querySelector(target) as HTMLElement;
-    } else {
-      targetElement = target;
+    if (typeof target === "number") {
+      lenis?.scrollTo(target, options);
+      return;
     }
+
+    const targetElement =
+      typeof target === "string"
+        ? (document.querySelector(target) as HTMLElement | null)
+        : target;
 
     if (lenis && targetElement) {
-      lenis.scrollTo(targetElement, {
-        duration: 1.2,
-        easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        ...options,
-      });
-    } else if (targetElement && typeof targetElement !== 'number') {
-      targetElement.scrollIntoView({ behavior: 'smooth' });
+      lenis.scrollTo(targetElement, options);
+    } else if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
     }
   };
 
-  return {
-    scrollTo,
-    lenis: getLenisInstance(),
-  };
+  return { scrollTo, lenis: getLenisInstance() };
 };

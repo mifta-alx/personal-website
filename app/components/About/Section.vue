@@ -7,6 +7,7 @@
         <NuxtImg
           src="/images/alx.webp"
           placeholder
+          priority
           lazy
           alt="Alx"
           class="w-full h-full object-cover"

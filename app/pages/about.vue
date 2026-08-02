@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { url } = useSiteConfig();
+const route = useRoute();
 definePageMeta({
   layout: "main-layout",
 });
@@ -10,15 +12,13 @@ useSeoMeta({
   ogDescription:
     "Learn more about my journey as a Frontend Developer, focusing on precision in code and curiosity in life.",
   ogType: "profile",
-  ogUrl: "https://withalx.com/about",
+  ogUrl: `${url}${route.path}`,
 });
 </script>
 
 <template>
-  <div class="flex flex-col max-w-3xl w-full">
-    <AboutSection />
-    <ExperienceSection />
-    <EducationSection />
-    <InvolvementSection />
-  </div>
+  <AboutSection />
+  <ExperienceSection />
+  <EducationSection />
+  <InvolvementSection />
 </template>

@@ -1,6 +1,6 @@
 import { introDetails } from "~/data/intro";
 
-export const useSiteStore = defineStore('site', {
+export const useIntroStore = defineStore('intro', {
   state: () => ({
       details : introDetails,
     }),

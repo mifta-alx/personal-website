@@ -3,8 +3,8 @@ const isOpen = ref(false);
 const copied = ref(false);
 const cardRef = ref<HTMLElement | null>(null);
 
-const siteStore = useSiteStore();
-const intro = computed(() => siteStore.getIntro);
+const introStore = useIntroStore();
+const intro = computed(() => introStore.getIntro);
 const {email, linkedinUrl, linkedinId} = intro.value;
 
 const toggleOpen = () => {

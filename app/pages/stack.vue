@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+const { url } = useSiteConfig();
+const route = useRoute();
 definePageMeta({
   layout: "main-layout",
 });
@@ -11,14 +13,14 @@ useSeoMeta({
   ogDescription:
     "Modern web technologies I specialize in for building robust digital products.",
   ogType: "website",
-  ogUrl: "https://withalx.com/stack",
+  ogUrl: `${url}${route.path}`,
 });
 
 const stackStore = useStackStore();
 const { getInfo, getStacks } = stackStore;
 </script>
 <template>
-  <div class="flex flex-col gap-10 lg:gap-15 max-w-3xl w-full py-10">
+  <div class="flex flex-col gap-10 lg:gap-15 py-10">
     <div class="space-y-2">
       <h1 class="text-base font-normal uppercase font-mono text-primary">
         {{ getInfo.title }}

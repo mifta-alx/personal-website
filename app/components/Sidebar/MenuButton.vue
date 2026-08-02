@@ -37,14 +37,6 @@ const isActive = computed(() => {
       )
     "
   >
-    <!-- <NuxtLink
-    :to="href"
-    :class="{
-      'bg-light-contrast-2 text-dark-6 scale-100!':
-        isActive,
-    }"
-    class="group flex h-8 w-8 md:w-full md:h-10 items-center justify-center md:justify-start gap-2.5 shrink-0 overflow-hidden hover:scale-[1.04] rounded-full md:rounded-lg md:px-3 text-left text-base text-nowrap transition-all duration-300 ease-in-out "
-  > -->
     <Icon v-if="icon" :name="icon" class="size-5.5" />
     <slot />
   </NuxtLink>
