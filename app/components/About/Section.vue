@@ -7,8 +7,9 @@
         <NuxtImg
           src="/images/alx.webp"
           placeholder
-          priority
-          lazy
+          :preload="{ fetchPriority: 'high' }"
+          quality="90"
+          format="webp"
           alt="Alx"
           class="w-full h-full object-cover"
         />
@@ -23,19 +24,19 @@
           >
             Building with purpose, learning with curiosity
           </h1>
-          <div class="space-y-6 text-base text-secondary leading-snug">
+          <div class="space-y-6 text-base text-secondary/90 leading-snug">
             <p>
               I'm Mifta, a 23-year-old Frontend Developer driven by a curiosity
               for how digital products are built. I love
-              <span class="text-primary/80">solving problems through code</span
+              <span class="text-primary">solving problems through code</span
               >, focusing on being
-              <span class="text-primary/80">detail-oriented</span> to ensure
+              <span class="text-primary">detail-oriented</span> to ensure
               every product I build feels solid and intuitive for the user.
             </p>
             <p>
               I enjoy working across the full development process—from early
               concepts to finished products. I thrive on
-              <span class="text-primary/80">bridging the gap</span> between
+              <span class="text-primary">bridging the gap</span> between
               complex requirements and technical implementation, always ensuring
               that the logic behind the code serves the final user experience.
             </p>

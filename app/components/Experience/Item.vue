@@ -19,7 +19,9 @@ const toggleRole = (index: number) => {
         class="relative z-10 flex size-10 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-border bg-secondary/15"
       >
         <NuxtImg
-          lazy
+          quality="80"
+          format="webp"
+          loading="lazy"
           placeholder
           :src="company.logo"
           :alt="company.name"

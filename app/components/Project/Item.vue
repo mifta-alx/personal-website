@@ -11,12 +11,15 @@ defineProps<{
     :to="`/project/${project.slug}`"
     class="group relative flex flex-col items-start justify-center gap-5 lg:gap-6"
   >
-    <div class="rounded-2xl w-full aspect-9/8 sm:aspect-5/3 overflow-hidden border border-secondary/10">
+    <div
+      class="rounded-2xl w-full aspect-9/8 sm:aspect-5/3 overflow-hidden border border-secondary/10"
+    >
       <NuxtImg
         :src="`/images/${project.slug}/${project.cover}`"
         :alt="project.title"
         placeholder
         class="h-full w-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+        quality="80"
         format="webp"
         loading="lazy"
       />
