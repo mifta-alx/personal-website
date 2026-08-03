@@ -1,4 +1,4 @@
-import { saveToDb } from "../service/db";
+import { saveMessage } from "../service/db";
 import { sendDiscordNotification } from "../service/discord";
 import { sendEmail } from "../service/email";
 
@@ -27,7 +27,7 @@ export default defineEventHandler(async (event) => {
   const inquiryData = { name, email, message };
 
   try {
-    await saveToDb(event, inquiryData);
+    await saveMessage(event, inquiryData);
   } catch (err: any) {
     throw createError({
       statusCode: 500,
