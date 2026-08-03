@@ -15,6 +15,11 @@ export const navigation = [
     label: "Stack",
   },
   {
+    url: "/contact",
+    icon: null,
+    label: "Contact",
+  },
+  {
     url: "https://drive.google.com/file/d/1K45yTCw0Vf1r3csYQjHPDvVtSwtg-jnK/view?usp=drive_link",
     icon: null,
     label: "Resume",
@@ -29,11 +34,6 @@ export const contacts = [
     label: "Email",
     target: "_blank",
   },
-//   {
-//     url: "/contact",
-//     icon: "ph:envelope",
-//     label: "Contact",
-//   },
   {
     url: "https://github.com/mifta-alx",
     icon: "ph:github-logo",

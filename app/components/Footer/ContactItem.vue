@@ -9,7 +9,7 @@ defineProps<{
   <NuxtLink
     :href="url"
     :target="target"
-    class="shrink-0 rounded-full bg-sidebar size-8 flex items-center justify-center text-primary/50 border border-border/50 hover:scale-110 transition-all duration-300 hover:text-primary active:scale-95"
+    class="shrink-0 rounded-full bg-sidebar size-8 flex items-center justify-center text-primary/50 border border-border/50 hover:scale-110 transition-all duration-300 hover:text-primary active:scale-95 outline-none focus-visible:ring-2 focus-visible:ring-secondary/20 focus-visible:ring-offset-2"
   >
     <Icon :name="icon" class="size-4.5" />
   </NuxtLink>
