@@ -1,6 +1,10 @@
 <script setup lang="ts">
 const projectStore = useProjectStore();
-const { getInfo, getProjects } = projectStore;
+const { getInfo, getProjects } = storeToRefs(projectStore);
+
+onMounted(() => {
+  projectStore.initLikes();
+});
 </script>
 <template>
   <section

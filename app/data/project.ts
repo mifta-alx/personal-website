@@ -13,6 +13,7 @@ const projectDetails: Project = {
       description:
         "Developed a comprehensive POS (Point of Sales) and Inventory Management system to digitize a traditionally manual snack consignment business. I engineered a robust platform that replaces paper-based logs with a synchronized digital workflow for both Admin and Staff. I implemented a streamlined Cashier Interface for rapid transaction processing, automated stock entry, and return (retur) management. By integrating a centralized Supabase database, the system ensures 100% data accuracy in calculating merchant profit-sharing, reducing human error by significant margins, and providing real-time sales visibility that was previously impossible with manual records.",
       cover: "tiga-jajan-1.webp",
+      coverTheme: "light",
       framework: "Nuxt",
       role: "Fullstack Developer",
       likes: 0,
@@ -37,6 +38,7 @@ const projectDetails: Project = {
       description:
         "Collaborating with the PUSTIK team, I worked on a complete re-engineering of the student academic portal to bridge the gap between the outdated legacy system and the current campus administrative requirements. This project involved rebuilding the platform from scratch to fix existing bugs and implement new, synchronized workflows for course registration and academic tracking using a more robust and modern tech stack.",
       cover: "siam-1.webp",
+      coverTheme: "dark",
       framework: "Next",
       role: "Frontend Developer",
       likes: 0,
@@ -88,6 +90,7 @@ const projectDetails: Project = {
       description:
         "Working with the PUSTIK team, I focused on overhauling the campus's authentication process to move away from isolated systems into a single integrated portal. I was responsible for building an intuitive interface from the ground up, ensuring a smooth transition for users and making navigation between complex internal applications feel effortless.",
       cover: "my-itn-1.webp",
+      coverTheme: "light",
       framework: "Next",
       role: "Frontend Developer",
       likes: 0,
@@ -116,6 +119,7 @@ const projectDetails: Project = {
       description:
         "Developed as an academic research project to deeply understand ERP structures, I built a comprehensive management platform for a frozen food business. I focused on translating complex Odoo inspired workflows such as material procurement, manufacturing cycles, and sales tracking into a functional and intuitive web interface.",
       cover: "erp-1.webp",
+      coverTheme: "light",
       framework: "Remix",
       role: "Frontend Developer",
       likes: 0,
@@ -164,6 +168,7 @@ const projectDetails: Project = {
       description:
         "Legal administrative tasks often struggle with manual errors and slow processing. This project tackled those issues by digitizing the PKPU (Debt Payment Obligation Suspension) workflow. The result is a centralized system that tracks legal timelines and debt data more accurately, making the entire restructuring process faster and more transparent.",
       cover: "pkpu-1.webp",
+      coverTheme: "dark",
       framework: "Sveltekit",
       role: "Fullstack Developer",
       likes: 0,
@@ -179,6 +184,7 @@ const projectDetails: Project = {
       description:
         "For an international coal trading firm like PT Parama Bara Intercontinental, digital credibility is key. I built a corporate profile that acts as a global gateway, presenting their operational scale and core values through a sophisticated interface designed to build trust with partners and clients across various countries.",
       cover: "parama-bara-1.webp",
+      coverTheme: "dark",
       framework: "Sveltekit",
       role: "Frontend Developer",
       likes: 0,
@@ -199,6 +205,7 @@ const projectDetails: Project = {
       description:
         "Choosing a high school major is often a confusing process for students. MajorApp solves this by applying the Simple Additive Weighting (SAW) method to analyze student interests and academic performance. The system processes these variables to generate objective, ranked recommendations, helping students make more informed decisions about their future.",
       cover: "major-1.webp",
+      coverTheme: "dark",
       framework: "Laravel",
       role: "Fullstack Developer",
       likes: 0,
