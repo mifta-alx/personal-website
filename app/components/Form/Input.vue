@@ -26,10 +26,10 @@ defineProps<{
       :type="type || 'text'"
       :placeholder="placeholder"
       :required="required"
-      :autocomplete="autocomplete"
+      autocomplete="off"
       :class="
         cn(
-          'bg-secondary/6 rounded-xl px-3.5 py-3 h-12  outline-none text-sm text-primary placeholder:text-secondary/60 focus:ring-1 focus:ring-border transition-all',
+          'bg-secondary/8 rounded-xl px-3.5 py-3 h-12  outline-none text-sm text-primary placeholder:text-secondary/60 focus:ring-1 focus:ring-border transition-all',
           $props.class,
         )
       "

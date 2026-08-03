@@ -30,7 +30,7 @@ withDefaults(
       :placeholder="placeholder"
       :class="
         cn(
-          'w-full bg-secondary/6 rounded-xl px-3.5 py-3 outline-none text-sm text-primary placeholder:text-secondary/60 focus:ring-1 focus:ring-border transition-all resize-y',
+          'w-full bg-secondary/8 rounded-xl px-3.5 py-3 outline-none text-sm text-primary placeholder:text-secondary/60 focus:ring-1 focus:ring-border transition-all resize-y',
           $props.class,
         )
       "

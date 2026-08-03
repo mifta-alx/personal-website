@@ -89,7 +89,7 @@ const handleSubmit = async () => {
         <button
           type="submit"
           :disabled="isSubmitting"
-          class="flex items-center justify-center w-full sm:w-36 px-4 bg-primary text-background hover:bg-primary/90 cursor-pointer rounded-full h-11.5 text-sm font-medium tracking-tight duration-300 transition-all ease-in-out outline-none focus:ring-1 focus-visible:ring-border disabled:bg-primary/50 disabled:cursor-not-allowed active:scale-98"
+          class="flex items-center justify-center w-full sm:w-34 px-4 bg-primary text-background hover:bg-primary/90 cursor-pointer rounded-full h-11 text-sm font-medium tracking-tight duration-300 transition-all ease-in-out outline-none focus:ring-1 focus-visible:ring-border disabled:bg-primary/50 disabled:cursor-not-allowed active:scale-98"
         >
           <template v-if="isSubmitting">
             <Icon name="svg-spinners:ring-resize" class="size-4.5" />
