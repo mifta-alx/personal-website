@@ -60,12 +60,12 @@ const handleLike = () => {
       name="ph:heart-fill"
       :class="
         cn(
-          'group-hover/likes:scale-110 group-active/likes:scale-90 size-4.5 sm:size-5 transition-all duration-200 ease-out sm:shadow-sm',
+          'group-hover/likes:scale-110 group-active/likes:scale-90 size-4.5 sm:size-5 transition-all duration-200 ease-out sm:text-shadow-sm',
           isLiked
-            ? 'bg-red-500'
+            ? 'text-red-500'
             : props.theme === 'light'
-              ? 'bg-background/30'
-              : 'bg-primary/70',
+              ? 'text-background/30'
+              : 'text-primary/70',
         )
       "
     />
@@ -74,8 +74,8 @@ const handleLike = () => {
         cn(
           'text-base font-medium tracking-tight',
           props.theme === 'light'
-            ? 'text-background sm:[text-shadow:0_1px_2px_rgba(0,0,0,0.12)]'
-            : 'text-primary sm:[text-shadow:0_1px_3px_rgba(0,0,0,0.45)]',
+            ? 'text-[#100c08] sm:[text-shadow:0_1px_2px_rgba(0,0,0,0.12)]'
+            : 'text-[#f7f7f7] sm:[text-shadow:0_1px_3px_rgba(0,0,0,0.45)]',
         )
       "
       >{{ totalLikes }}</span

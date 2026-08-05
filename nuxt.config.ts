@@ -1,5 +1,5 @@
 import tailwindcss from "@tailwindcss/vite";
-import pkg from "./package.json"
+import pkg from "./package.json";
 
 export default defineNuxtConfig({
   app: {
@@ -30,10 +30,53 @@ export default defineNuxtConfig({
     },
   },
   icon: {
-    mode: "css",
+    mode: "svg",
     cssLayer: "base",
+
+    clientBundle: {
+      scan: true,
+      icons: [
+        "ph:sun-fill",
+        "ph:moon-fill",
+        "ph:sun",
+        "ph:moon",
+        "ph:envelope",
+        "ph:github-logo",
+        "ph:linkedin-logo",
+        "ph:instagram-logo",
+        "ph:tiktok-logo",
+        "ph:heart-fill",
+        "ph:check-bold",
+        "ph:x-bold",
+        "ph:caret-down",
+        "ph:arrow-up-bold",
+        "ph:paper-plane-tilt-fill",
+        "ph:copy-fill",
+        "ph:check-circle-fill",
+        "ph:arrow-square-out",
+        "ph:graduation-cap",
+        "ph:building-office",
+        "simple-icons:nextdotjs",
+        "simple-icons:tanstack",
+        "simple-icons:nuxt",
+        "simple-icons:svelte",
+        "simple-icons:laravel",
+        "simple-icons:livewire",
+        "simple-icons:postgresql",
+        "simple-icons:redis",
+        "simple-icons:supabase",
+        "simple-icons:openai",
+        "simple-icons:googlegemini",
+        "simple-icons:ollama",
+        "simple-icons:tailwindcss",
+        "simple-icons:vercel",
+        "simple-icons:postman",
+        "simple-icons:docker",
+        "svg-spinners:ring-resize",
+      ],
+    },
     serverBundle: {
-      collections: ["ph", "simple-icons"],
+      collections: ["ph", "simple-icons", "svg-spinners"],
     },
   },
   typescript: {
@@ -64,7 +107,13 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "@nuxtjs/sitemap",
     "@nuxtjs/robots",
+    "@nuxt/fonts",
   ],
+  fonts: {
+    families: [
+      { name: "Jetbrains Mono", provider: "google" },
+    ],
+  },
   site: {
     url: process.env.NUXT_PUBLIC_SITE_URL || "https://withalx.com",
     name: "Miftakhussurur Al Maliki",
