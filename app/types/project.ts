@@ -12,6 +12,8 @@ export interface ProjectItem {
   likes: number;
   framework: keyof typeof frameworkType;
   role: string;
+  year: string;
+  live: string | null;
   technologies: (keyof typeof frameworkType)[];
   gallery: string[];
 }

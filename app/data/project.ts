@@ -7,7 +7,7 @@ const projectDetails: Project = {
     {
       slug: "tiga-jajan",
       name: "TigaJajan",
-      title: "TigaJajan: Full-stack Consignment POS System",
+      title: "Consignment Point of Sales System",
       type: "Web Platform",
       idea: "Digitalizing the snack consignment ecosystem",
       description:
@@ -16,6 +16,8 @@ const projectDetails: Project = {
       coverTheme: "light",
       framework: "Nuxt",
       role: "Fullstack Developer",
+      year: "2026",
+      live: null,
       likes: 0,
       technologies: ["Typescript", "Vue", "Nuxt", "Tailwind", "Supabase"],
       gallery: [
@@ -32,7 +34,7 @@ const projectDetails: Project = {
     {
       slug: "siam",
       name: "SIAM",
-      title: "SIAM : Sistem Informasi Akademik Mahasiswa",
+      title: "Sistem Informasi Akademik Mahasiswa",
       type: "Web Platform",
       idea: "Redeveloping the academic ecosystem to align with modern administrative workflows",
       description:
@@ -41,6 +43,8 @@ const projectDetails: Project = {
       coverTheme: "dark",
       framework: "Next",
       role: "Frontend Developer",
+      year: "2026",
+      live: null,
       likes: 0,
       technologies: [
         "Javascript",
@@ -84,7 +88,7 @@ const projectDetails: Project = {
     {
       slug: "my-itn",
       name: "My-ITN",
-      title: "My ITN : Single Sign On Portal",
+      title: "Single Sign On Portal",
       type: "Web Platform",
       idea: "Centralizing campus digital ecosystem into a seamless Single Sign-On portal",
       description:
@@ -93,6 +97,8 @@ const projectDetails: Project = {
       coverTheme: "light",
       framework: "Next",
       role: "Frontend Developer",
+      year: "2026",
+      live: null,
       likes: 0,
       technologies: [
         "Javascript",
@@ -113,7 +119,7 @@ const projectDetails: Project = {
     {
       slug: "erp",
       name: "ERP Frozen Food",
-      title: "ERP Frozen Food",
+      title: "Entity Resource Planning System",
       type: "Web Platform",
       idea: "Simulating enterprise-grade workflows for integrated business management",
       description:
@@ -122,6 +128,8 @@ const projectDetails: Project = {
       coverTheme: "light",
       framework: "Remix",
       role: "Frontend Developer",
+      year: "2026",
+      live: null,
       likes: 0,
       technologies: ["Javascript", "Remix", "Tailwind"],
       gallery: [
@@ -162,7 +170,7 @@ const projectDetails: Project = {
     {
       slug: "pkpu",
       name: "PKPU",
-      title: "PKPU : Penundaan Kewajiban Pembayaran Utang",
+      title: "Penundaan Kewajiban Pembayaran Utang",
       type: "Web Platform",
       idea: "Transitioning legal debt restructuring from manual paperwork to a secure digital system",
       description:
@@ -171,6 +179,8 @@ const projectDetails: Project = {
       coverTheme: "dark",
       framework: "Sveltekit",
       role: "Fullstack Developer",
+      year: "2026",
+      live: null,
       likes: 0,
       technologies: ["Javascript", "Sveltekit", "Tailwind"],
       gallery: ["pkpu-1.webp", "pkpu-2.webp", "pkpu-3.webp", "pkpu-4.webp"],
@@ -187,6 +197,8 @@ const projectDetails: Project = {
       coverTheme: "dark",
       framework: "Sveltekit",
       role: "Frontend Developer",
+      year: "2026",
+      live: null,
       likes: 0,
       technologies: ["Javascript", "Sveltekit", "Tailwind"],
       gallery: [
@@ -199,7 +211,7 @@ const projectDetails: Project = {
     {
       slug: "major-app",
       name: "MajorApp",
-      title: "MajorApp: Decision Support System",
+      title: "Decision Support System",
       type: "Web Platform",
       idea: "Implementing decision-making algorithms to help students choose their high school majors",
       description:
@@ -208,6 +220,8 @@ const projectDetails: Project = {
       coverTheme: "dark",
       framework: "Laravel",
       role: "Fullstack Developer",
+      year: "2026",
+      live: null,
       likes: 0,
       technologies: ["Php", "Laravel", "Livewire", "Tailwind"],
       gallery: [
