@@ -1,6 +1,6 @@
 import type { frameworkType } from "~/data/project";
 
-export interface Project {
+export interface ProjectItem {
   slug: string;
   name: string;
   title: string;
@@ -8,8 +8,23 @@ export interface Project {
   idea: string;
   description: string;
   cover: string;
+  coverTheme: string;
+  likes: number;
   framework: keyof typeof frameworkType;
   role: string;
+  year: string;
+  live: string | null;
   technologies: (keyof typeof frameworkType)[];
   gallery: string[];
+}
+
+export interface Project {
+  title: string
+  description: string
+  projects: ProjectItem[]
+}
+
+export interface ProjectLikePayload {
+  slug: string;
+  isLiking: boolean;
 }

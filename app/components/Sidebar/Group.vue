@@ -1,5 +1,10 @@
+<script setup lang="ts">
+defineProps<{
+  class?: string;
+}>();
+</script>
 <template>
-  <div class="relative flex w-full min-w-0 justify-between items-center flex-row md:flex-col">
+  <div :class="cn('relative flex flex-col gap-3', $props.class)">
     <slot />
   </div>
 </template>

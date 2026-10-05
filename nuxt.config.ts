@@ -1,72 +1,127 @@
 import tailwindcss from "@tailwindcss/vite";
+import pkg from "./package.json";
 
 export default defineNuxtConfig({
   app: {
     head: {
       meta: [
-        { name: 'google-site-verification', content: '7AOFh7O3qr2fImEVzTlbw59OI4K-UYmolty8VZ8DW0k' }
+        {
+          name: "google-site-verification",
+          content: "7AOFh7O3qr2fImEVzTlbw59OI4K-UYmolty8VZ8DW0k",
+        },
       ],
       link: [
-        { rel: 'icon', type: 'image/png', href: '/favicon.png' },
-        { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }
-      ]
-    }
+        { rel: "icon", type: "image/png", href: "/favicon.png" },
+        { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+      ],
+    },
   },
-  compatibilityDate: '2025-07-15',
+  compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  css: ['./app/assets/css/main.css'],
-  nitro: {
-    preset: 'vercel'
-  },
+  css: ["~/assets/css/main.css"],
+
   experimental: {
-    payloadExtraction: false
+    payloadExtraction: false,
   },
   runtimeConfig: {
     discordWebhookUrl: process.env.DISCORD_WEBHOOK_URL,
     public: {
-      authorId: process.env.AUTHOR_ID,
-    }
+      appVersion: pkg.version,
+    },
   },
   icon: {
-    mode: 'css',
-    cssLayer: 'base',
+    mode: "svg",
+    cssLayer: "base",
+
+    clientBundle: {
+      scan: true,
+      icons: [
+        "ph:sun-fill",
+        "ph:moon-fill",
+        "ph:sun",
+        "ph:moon",
+        "ph:envelope",
+        "ph:github-logo",
+        "ph:linkedin-logo",
+        "ph:instagram-logo",
+        "ph:tiktok-logo",
+        "ph:heart-fill",
+        "ph:check-bold",
+        "ph:x-bold",
+        "ph:caret-down",
+        "ph:arrow-up-bold",
+        "ph:paper-plane-tilt-fill",
+        "ph:copy-fill",
+        "ph:check-circle-fill",
+        "ph:arrow-square-out",
+        "ph:graduation-cap",
+        "ph:building-office",
+        "simple-icons:nextdotjs",
+        "simple-icons:tanstack",
+        "simple-icons:nuxt",
+        "simple-icons:svelte",
+        "simple-icons:laravel",
+        "simple-icons:livewire",
+        "simple-icons:postgresql",
+        "simple-icons:redis",
+        "simple-icons:supabase",
+        "simple-icons:openai",
+        "simple-icons:googlegemini",
+        "simple-icons:ollama",
+        "simple-icons:tailwindcss",
+        "simple-icons:vercel",
+        "simple-icons:postman",
+        "simple-icons:docker",
+        "svg-spinners:ring-resize",
+      ],
+    },
     serverBundle: {
-      collections: ['solar']
-    }
+      collections: ["ph", "simple-icons", "svg-spinners"],
+    },
   },
   typescript: {
-    includeWorkspace: true
+    includeWorkspace: true,
   },
   vite: {
-    plugins: [
-      tailwindcss(),
-    ],
+    plugins: [tailwindcss()],
   },
   colorMode: {
-    classSuffix: '',
-    preference: 'system',
-    fallback: 'light',
+    classSuffix: "",
+    preference: "system",
+    fallback: "light",
+    storageKey: "nuxt-color-mode",
   },
   supabase: {
     redirect: false,
     cookieOptions: {
       maxAge: 60 * 60 * 8,
-      sameSite: 'lax',
-      secure: process.env.NODE_ENV === 'production',
-    }
+      sameSite: "lax",
+      secure: process.env.NODE_ENV === "production",
+    },
   },
   modules: [
-    '@nuxt/icon',
-    '@nuxtjs/color-mode',
-    '@nuxt/image',
-    '@vueuse/motion/nuxt',
-    '@nuxtjs/supabase',
-    '@nuxtjs/seo',
+    "@nuxt/icon",
+    "@nuxtjs/color-mode",
+    "@nuxt/image",
+    "@nuxtjs/supabase",
+    "@pinia/nuxt",
+    "@nuxtjs/sitemap",
+    "@nuxtjs/robots",
+    "@nuxt/fonts",
   ],
-  site: {
-    url: 'https://withalx.com',
-    name: 'Miftakhussurur Al Maliki - Frontend Developer',
-    description: 'Explore the professional portfolio of Miftakhussurur Al Maliki, a Frontend Developer specialized in building modern, responsive, and high-performance web applications.',
-    defaultLocale: 'en',
+  fonts: {
+    families: [
+      { name: "Jetbrains Mono", provider: "google" },
+    ],
   },
-})
+  site: {
+    url: process.env.NUXT_PUBLIC_SITE_URL || "https://withalx.com",
+    name: "Miftakhussurur Al Maliki",
+    description:
+      "Portfolio of Miftakhussurur Al Maliki, a Frontend Developer crafting solid, intuitive web experiences.",
+    defaultLocale: "en",
+  },
+  sitemap: {
+    sources: ["/api/sitemap"],
+  },
+});
