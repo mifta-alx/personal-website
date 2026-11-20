@@ -5,6 +5,27 @@ export const workExperiences: Experience = {
   description: "My professional journey and work history.",
   companies: [
     {
+      logo: "/images/pranala-logo.webp",
+      name: "PT Pranala Digital Transmaritim",
+      url: "https://pranala-dt.co.id",
+      roles: [
+        {
+          name: "Design Engineer",
+          period: "Sep 2026 - Present",
+          location: "Surabaya, East Java, Indonesia",
+          mode: "On-site",
+          responsibilities: [
+            "Contribute to the ongoing development of iStow v3 using Qt and QML within a C++ codebase.",
+            "Collaborate on product improvements by identifying usability issues, questioning redundant workflows, and recommending changes to existing features and interactions.",
+            "Designed new interfaces and interactive prototypes in Figma for iStow v3, replacing the legacy UI.",
+            "Structured the QML UI into modular, reusable components and organized the codebase to improve maintainability.",
+            "Built a reusable UI component library with usage documentation.",
+            "Implement application screens, dialogs, interactions, and empty states using the shared component library.",
+          ],
+        },
+      ],
+    },
+    {
       logo: "/images/itn-logo-origin.webp",
       name: "PUSTIK Institut Teknologi Nasional Malang",
       url :"https://www.itn.ac.id",
